@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Oi mundo. Estou pronto para C++" << endl;
+    return 0;
+}
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    cout << "Hey, escrever std:: o tempo todo � chato d+" << endl;
+    return 0;
+}
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    cout << "Mas eu sei como evitar isso. :)" << endl;
+    return 0;
+}

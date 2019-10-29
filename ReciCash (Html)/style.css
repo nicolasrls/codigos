@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    background-color: blueviolet;
+}
+/*cabeçalho 1*/
+h1{
+    /*propriedade: valor;*/
+    color: green;
+    font-size: 2cm;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    color: rgb(101, 231, 101);
+    font-size: 0.5cm;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.div1{
+    display: flex;
+    flex-direction: column;
+}
+.div2{
+    display: flex;
+    text-align: center;
+}
+
+nav a{
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    text-decoration: none;
+    color:white;
+}
+.div3 label{
+    color: white;
+    margin-right: 15px;
+}
+
+section{
+    background-color: indigo;
+    width: 100%;
+    height: 400px;
+    align-items: center;
+}
+
+section div{
+    color: pink;
+    width: 40%;
+    height: 40%;
+}
+
+.divSlogan{
+    width: 100%;
+    height: 25px;
+    background-color: yellow;
+}
+
+.section2{
+    /* width: 100%;
+    height: 400px; */
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+h2 {
+    color: indigo;
+}
+.reciclagem{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 5px double black;
+
+}
+
+/*texto*/
+p{
+    color: #040457;
+}
+
+/*fundo do site*/
+
+.info{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    
+}
+
+.info div {
+    width: 400px;
+    height: 300px;
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+}   
+.logo{
+    width: 250px;
+    height: 250px;
+}
+
+footer{
+    font-size: 20px;
+}
+
+marquee{
+    font-weight: bold;
+}
