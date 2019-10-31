@@ -1,0 +1,23 @@
+dica para questão 7:
+
+map<string,map<string,float>> feira;
+
+feira["laranja"]["quantidade"] = 10;
+
+feira está relacionado ao primeiro map, quantidade a string do segundo map e o = 10 está relacionado ao float.
+
+feira["laranja"]["quantidade"] = 10;
+feira["laranja"]["preço"] = 10.0;
+
+
+for(auto e : feira){
+    cout << e.first << e.second["quantidade"] << e.second["preco"];
+}
+
+exemplo de iteradores:
+
+vector <int> valores;
+vector <int>::iterator it;
+
+
+

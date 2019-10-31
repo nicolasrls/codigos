@@ -6,17 +6,20 @@ using namespace std;
 int main()
 {
 
-   map<int, int> multip;
+   int n;
+   map<int, int> qdd;
 
-   multip[1] = (1 * 1);
-   multip[2] = (2 * 2);
-   multip[3] = (3 * 3);
-   multip[4] = (4 * 4);
-   multip[5] = (5 * 5);
+   cout << "Insira um valor: " << endl;
+   cin >> n;
 
-   for(auto& elemento: multip){
-   cout << "{"<< elemento.first << ": " << elemento.second << "}"<<endl;
+   for (int i = 1; i <= n; i++)
+   {
+      qdd[i] = i * i;
+   }
 
-}
+   for (auto &elemento : qdd)
+   {
+      cout << "{" << elemento.first << ": " << elemento.second << "}" << endl;
+   }
    return 0;
 }

@@ -1,13 +1,25 @@
 #include <map>
 #include <iostream>
-#define STRING = "Arara rara"
+
 using namespace std;
 
 int main()
 {
+    map<char, int> contador;
+    string palavra;
 
-    map<int, int> multip;
-    
+    cout << "Informe uma palavra: ";
+    getline(cin, palavra);
+
+    for (auto letra : palavra)
+    {
+        if(letra != ' ')contador[letra]++;
+    }
+
+    for (auto &elemento : contador)
+    {
+        cout << elemento.first << " aparece : " << elemento.second << " vezes." << endl;
+    }
 
     return 0;
 }
