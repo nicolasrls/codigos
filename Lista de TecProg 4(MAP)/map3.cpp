@@ -21,8 +21,11 @@ int main(){
         }
 
     }while (name != "sair");
-    return 0;
+    
     for (auto &n : lista_tel){
         cout << "Nome: " << n.first << " numero : " << n.second << endl;
     }
+
+    return 0;
+
 }
