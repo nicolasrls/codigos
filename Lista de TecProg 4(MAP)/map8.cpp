@@ -19,4 +19,6 @@ int main(){
     for(auto elemento : contador){
         cout << elemento.first << " se repete: " << elemento.second << " vezes."<< endl;
     }
+    
+    numeros.close();
 }
