@@ -7,16 +7,8 @@ void Veiculo::setTipo(int tp){
     tipo=tp;
 }
 
-int Veiculo::getTipo(){
-    return tipo;
-}
-
 void Veiculo::setVelmax(int vm){
     velMax = vm;
-}
-
-int Veiculo::getVelmax(){
-    return velMax;
 }
 
 void Veiculo::setArma(bool ar){
@@ -37,6 +29,5 @@ void Veiculo::imp(){
     cout << "Velocidade Máxima: " << velMax << endl;
     cout << "Qtde de rodas: " << rodas << endl;
     cout << "Armamento: " << arma << endl;
-    cout << "Blindagem: " << blind << endl;
-    
+    cout << "Blindagem: " << blind << endl;   
 }

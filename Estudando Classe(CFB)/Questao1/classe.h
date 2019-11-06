@@ -7,9 +7,7 @@ public:
     int blind;
     int rodas;
     void setTipo(int tp);
-    int getTipo();
     void setVelmax(int vm);
-    int getVelmax();
     void setArma(bool ar);
     void imp();
 
@@ -24,10 +22,5 @@ public:
     Moto();
 };
 
-Moto::Moto(){
-    vel = 0;
-    blind = 0;
-    rodas = 2;
-}
-
 #endif
+
