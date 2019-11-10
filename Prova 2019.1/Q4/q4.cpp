@@ -9,52 +9,36 @@ int main(){
     vector <int> valores;
     float media = 0;
     int valor,op;
-    
-    do{
-    while(cin >> valor){
-        valores.push_back(valor);
-    }
+    string op2;
 
-    cout << "Digite 1 para ver os valores ordenados, 2 para a média dos valores e 3 para obter a mediana dos valores." << endl;
+    do{
+
+    cout << "Digite um valor: " << endl;
+    cin >> valor;
+    valores.push_back(valor);
+
+    cout << "Escolha 1 para ordenar o vetor, 2 para obter a média, 3 para mediana" << endl;
     cin >> op;
 
-    switch (op)
-    {
-    case 1:
-
-        sort(valores.begin(),valores.end());
-        for(auto elem: valores){
-            cout << elem;
-        }
-        break;
-
-    case 2:
-
-        for(int i = 0; i < valores.size(); i++){
-            media += valores[i];
-        }
-        media = (media/valores.size());
-        cout << "A média é: " << media << endl;
-        break;
-
-    case 3:
-        float mediana;
-        sort(valores.begin(),valores.end());
-        for(int j = 0; j < valores.size();j++){
-            if(valores.size()%2 == 1){
-                mediana = valores[valores.size()%2];
+    switch(op){
+        case 1:
+            sort(valores.begin(),valores.end());
+            for(auto elem: valores){
+                cout << elem;
             }
-            if(valores.size()%2 == 0){
-                mediana = (valores[(valores.size()%2)-1]+valores[(valores.size()%2)+1])/2;
+            break;
+        case 2:
+            for(int i = 0; i < valores.size(); i++){
+                media += valores[i];
             }
-        }
-        cout << "A mediana é: " << mediana << endl;
-        break;
+            media = (media/valores.size());
+            cout << "A média é: " << media << endl;
     }
-    cout << "Continuar?  ";
-    }while(continuar == 's');
 
-
+    cout << "Deseja continuar? " ;
+    cin >> op2;
+    }while(op2 == "sim");
+    
 
     return 0;
 }
