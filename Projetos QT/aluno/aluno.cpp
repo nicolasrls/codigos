@@ -1,5 +1,20 @@
 #include "aluno.h"
 
+Aluno::Aluno()
+{
+
+}
+
+QString Aluno::calcularStatus()
+{
+    if(media > 80){
+        return "Aprovado";
+    }else{
+        return "Reprovado";
+    }
+
+}
+
 QString Aluno::getNome() const
 {
     return nome;
@@ -20,16 +35,6 @@ void Aluno::setMatricula(const QString &value)
     matricula = value;
 }
 
-QString Aluno::getCurso() const
-{
-    return curso;
-}
-
-void Aluno::setCurso(const QString &value)
-{
-    curso = value;
-}
-
 double Aluno::getMedia() const
 {
     return media;
@@ -38,18 +43,4 @@ double Aluno::getMedia() const
 void Aluno::setMedia(double value)
 {
     media = value;
-}
-
-QString Aluno::definirStatus()
-{
-    if(media > 80){
-        return "Aprovado";
-    }else{
-        return "Reprovado";
-    }
-}
-
-Aluno::Aluno()
-{
-
 }
