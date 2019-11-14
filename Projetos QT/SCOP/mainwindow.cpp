@@ -15,15 +15,6 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_ordmenordata_clicked()
-{
-
-}
-
-void MainWindow::on_ordmaiorvalor_clicked()
-{
-
-}
 
 void MainWindow::on_cadastrar_clicked()
 {
@@ -35,7 +26,7 @@ void MainWindow::on_cadastrar_clicked()
     temp.setEstado(ui->estadoatual->currentText());
     temp.setDestino(ui->destinoObj->text());
 
-    qDebug << temp.getObj();
+    qDebug() << temp.getObj() << temp.getData() << temp.getValor();
 }
 
 

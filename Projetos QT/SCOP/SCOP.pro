@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     cadastro.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    objeto.cpp
 
 HEADERS += \
     cadastro.h \
-    mainwindow.h
+    mainwindow.h \
+    objeto.h
 
 FORMS += \
     mainwindow.ui

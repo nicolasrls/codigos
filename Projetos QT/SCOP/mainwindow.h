@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <QDebug>
-#include <QString>
+#include <QTimer>
+#include "cadastro.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,9 +19,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnCadastrar_clicked();
 
-    void on_maiornota_windowTitleChanged(const QString &title);
+    void on_cadastrar_clicked();
+
 
 private:
     Ui::MainWindow *ui;

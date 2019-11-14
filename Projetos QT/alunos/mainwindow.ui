@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -195,46 +195,6 @@ color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 0
      <attribute name="title">
       <string>Dados</string>
      </attribute>
-     <widget class="QWidget" name="">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>23</y>
-        <width>126</width>
-        <height>72</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Aluno Com a maior média:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="maiornota">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Maior média:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="maiormedia">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
     </widget>
    </widget>
   </widget>
