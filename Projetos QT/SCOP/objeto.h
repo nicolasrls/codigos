@@ -1,7 +1,7 @@
 #ifndef OBJETO_H
 #define OBJETO_H
 #include "cadastro.h"
-#include <QVector><
+#include <QVector>
 #include <algorithm>
 
 class objeto

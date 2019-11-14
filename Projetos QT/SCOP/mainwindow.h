@@ -20,7 +20,8 @@ public:
 
 private slots:
 
-    void on_cadastrar_clicked();
+    void on_btncadastrar_clicked();
+    void inserirNaTabela(Cadastro a, int linha);
 
 
 private:

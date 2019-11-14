@@ -9,3 +9,4 @@ void objeto::inserirObjeto(Cadastro a)
 {
     objetos.push_back(a);
 }
+

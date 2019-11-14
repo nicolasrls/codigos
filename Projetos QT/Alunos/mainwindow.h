@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDebug>
+#include <QString>
+
+#include "turma.h"
 #include "aluno.h"
 
 namespace Ui {
@@ -17,10 +21,15 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btn_clicked();
+    void on_btnCadastro_clicked();
+
+    void on_btn_ordernarNome_clicked();
 
 private:
     Ui::MainWindow *ui;
+    Turma turma;
+    void atualizarEstatisticas();
+    void inserirNaTabela(Aluno a, int linha);
 };
 
 #endif // MAINWINDOW_H

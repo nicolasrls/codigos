@@ -51,6 +51,12 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">rgb: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 0, 255), stop:0.166 rgba(255, 255, 0, 255), stop:0.333 rgba(0, 255, 0, 255), stop:0.5 rgba(0, 255, 255, 255), stop:0.666 rgba(0, 0, 255, 255), stop:0.833 rgba(255, 0, 255, 255), stop:1 rgba(255, 0, 0, 255));</string>
+      </property>
       <property name="text">
        <string>SCOP - Cadastro de Objetos Para Envio</string>
       </property>
@@ -207,7 +213,7 @@
           </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="cadastrar">
+          <widget class="QPushButton" name="btncadastrar">
            <property name="text">
             <string>Cadastrar</string>
            </property>
@@ -216,7 +222,7 @@
         </layout>
        </item>
        <item>
-        <widget class="QTableWidget" name="tableWidget">
+        <widget class="QTableWidget" name="tabela">
          <column>
           <property name="text">
            <string>Objeto</string>
@@ -251,7 +257,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -297,16 +303,16 @@
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="ordmenordata">
+          <widget class="QPushButton" name="ordmenorcodigo">
            <property name="text">
-            <string>Ordenar por menor data</string>
+            <string>Ordenar por Menor Codigo</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="ordmaiorvalor">
            <property name="text">
-            <string>Ordenar por maior valor</string>
+            <string>Ordenar por Maior Valor</string>
            </property>
           </widget>
          </item>
