@@ -20,6 +20,8 @@ public:
 private slots:
     void on_btnCadastrar_clicked();
 
+    void on_maiornota_windowTitleChanged(const QString &title);
+
 private:
     Ui::MainWindow *ui;
 };

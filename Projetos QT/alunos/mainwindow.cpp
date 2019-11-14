@@ -35,4 +35,8 @@ void MainWindow::on_btnCadastrar_clicked()
     ui->tabela->setItem(qntd_linhas,3, new QTableWidgetItem(QString::number(aluno.getMedia())));
     ui->tabela->setItem(qntd_linhas,2, new QTableWidgetItem(aluno.getCurso()));
     ui->tabela->setItem(qntd_linhas,4, new QTableWidgetItem(aluno.definirStatus()));
+
+
 }
+
+
