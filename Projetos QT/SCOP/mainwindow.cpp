@@ -4,6 +4,8 @@
 #include "objeto.h"
 #include <QPixmap>
 
+QString local = "C:/Users/nicol/Documents/codigos/Projetos QT/SCOP/Arquivo/";
+QString nome = "dados_SCOP.csv";
 
 Cadastro temp;
 Objeto a;
@@ -104,12 +106,15 @@ void MainWindow::on_ordpeso_clicked()
 
 void MainWindow::on_actionAbrir_triggered()
 {
-
+    QFile arquivo(local+nome);
+    if(!arquivo.open(QFile::ReadOnly|QFile::Text)){
+        QMessageBox::warning(this,"Erro","Erro ao abrir o arquivo.");
+    }
 }
 
 void MainWindow::on_actionSalvar_triggered()
 {
-
+    QFile arquivo1(local+nome);
 }
 
 void MainWindow::on_actionSair_triggered()

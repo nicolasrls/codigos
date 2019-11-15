@@ -3,6 +3,8 @@
 #include "cadastro.h"
 #include <QVector>
 #include <algorithm>
+#include <QFile>
+#include <QMessageBox>
 
 
 class Objeto
@@ -17,7 +19,7 @@ public:
     void ordenarPorCodigo();
     void ordenarPorValor();
     void ordenarPorPeso();
-    void inserirNoArquivo();
+    void salvarnoArquivo(QFile a);
     int size();
     Cadastro operator[](int indice);
 };

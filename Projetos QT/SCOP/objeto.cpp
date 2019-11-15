@@ -1,5 +1,7 @@
 #include "objeto.h"
 
+//QString local = "C:/Users/nicol/Documents/codigos/Projetos QT/SCOP/Arquivo/";
+//QString nome = "dados_SCOP.csv";
 
 
 void Objeto::inserirObjeto(Cadastro a)
@@ -34,10 +36,13 @@ void Objeto::ordenarPorPeso()
     });
 }
 
-void Objeto::inserirNoArquivo()
+void Objeto::salvarnoArquivo(QFile arquivo)
 {
-    //ifstream arquivo;
-
+    if(!arquivo.open(QFile::WriteOnly|QFile::Text)){
+       // QMessageBox::warning(this,"Erro","Erro ao abrir o arquivo.");
+    }
+    arquivo.flush();
+    arquivo.close();
 }
 
 int Objeto::size()

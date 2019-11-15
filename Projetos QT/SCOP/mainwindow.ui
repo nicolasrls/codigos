@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>10</y>
+      <x>10</x>
+      <y>0</y>
       <width>931</width>
       <height>601</height>
      </rect>
@@ -27,7 +27,7 @@
      <string notr="true">color: rgb(0, 0, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -46,7 +46,7 @@
        <string>Desenvolvido por: Nícolas Ribeiro(Eng. Elétrica).</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -232,7 +232,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -292,9 +292,7 @@ background-color: rgb(0,0,0);</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-
-</string>
+         <string notr="true"/>
         </property>
         <property name="showGrid">
          <bool>true</bool>
@@ -432,14 +430,22 @@ background-color: rgb(0,0,0);</string>
    </property>
    <widget class="QMenu" name="menuSCOP">
     <property name="title">
-     <string>SCOP</string>
+     <string>Menu</string>
     </property>
     <addaction name="actionAbrir"/>
     <addaction name="actionSalvar"/>
     <addaction name="separator"/>
     <addaction name="actionSair"/>
    </widget>
+   <widget class="QMenu" name="menuEditar">
+    <property name="title">
+     <string>Editar</string>
+    </property>
+    <addaction name="actionAlterar"/>
+    <addaction name="actionExcluir"/>
+   </widget>
    <addaction name="menuSCOP"/>
+   <addaction name="menuEditar"/>
   </widget>
   <action name="actionAbrir">
    <property name="icon">
@@ -462,6 +468,24 @@ background-color: rgb(0,0,0);</string>
   <action name="actionSair">
    <property name="text">
     <string>Sair</string>
+   </property>
+  </action>
+  <action name="actionAlterar">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../Downloads/Aula_17/icones/editar_ico.png</normaloff>../../../../Downloads/Aula_17/icones/editar_ico.png</iconset>
+   </property>
+   <property name="text">
+    <string>Alterar</string>
+   </property>
+  </action>
+  <action name="actionExcluir">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../Downloads/Aula_17/icones/excluir_ico.png</normaloff>../../../../Downloads/Aula_17/icones/excluir_ico.png</iconset>
+   </property>
+   <property name="text">
+    <string>Excluir</string>
    </property>
   </action>
  </widget>

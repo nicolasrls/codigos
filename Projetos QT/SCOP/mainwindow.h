@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QTimer>
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
 #include "cadastro.h"
 
 QT_BEGIN_NAMESPACE
