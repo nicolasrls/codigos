@@ -14,6 +14,7 @@ private:
     QString data;
     QString estado;
     QString destino;
+    QString peso;
 
 
 public:
@@ -31,6 +32,8 @@ public:
     void setEstado(const QString &value);
     QString getDestino() const;
     void setDestino(const QString &value);
+    QString getPeso() const;
+    void setPeso(const QString &value);
 };
 
 #endif // CADASTRO_H

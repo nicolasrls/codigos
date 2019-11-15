@@ -62,6 +62,16 @@ void Cadastro::setDestino(const QString &value)
     destino = value;
 }
 
+QString Cadastro::getPeso() const
+{
+    return peso;
+}
+
+void Cadastro::setPeso(const QString &value)
+{
+    peso = value;
+}
+
 Cadastro::Cadastro()
 {
 

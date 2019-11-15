@@ -3,6 +3,7 @@
 #include "cadastro.h"
 #include <QVector>
 #include <algorithm>
+#include <fstream>
 
 class Objeto
 {
@@ -15,6 +16,8 @@ public:
     void inserirObjeto(Cadastro a);
     void ordenarPorCodigo();
     void ordenarPorValor();
+    void ordenarPorPeso();
+    void inserirNoArquivo();
     int size();
     Cadastro operator[](int indice);
 };

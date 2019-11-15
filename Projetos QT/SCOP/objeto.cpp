@@ -27,6 +27,19 @@ void Objeto::ordenarPorValor()
     });
 }
 
+void Objeto::ordenarPorPeso()
+{
+    std::sort(objetos.begin(),objetos.end(),[](Cadastro a, Cadastro b){
+        return a.getPeso()<b.getPeso();
+    });
+}
+
+void Objeto::inserirNoArquivo()
+{
+    ifstream arquivo;
+
+}
+
 int Objeto::size()
 {
     return objetos.size();
