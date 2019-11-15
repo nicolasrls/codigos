@@ -23,6 +23,9 @@ private slots:
     void on_btncadastrar_clicked();
     void inserirNaTabela(Cadastro a, int linha);
 
+    void on_ordmenorcodigo_clicked();
+
+    void on_ordmaiorvalor_clicked();
 
 private:
     Ui::MainWindow *ui;

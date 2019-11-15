@@ -1,6 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "cadastro.h"
+#include "objeto.h"
+
+Cadastro temp;
+Objeto a;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -16,13 +20,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btncadastrar_clicked()
 {
-    Cadastro temp;
+
     temp.setCi(ui->inputCi->text());
     temp.setObj(ui->inputObjeto->text());
     temp.setData(ui->edicaodata->text());
     temp.setValor(ui->valorobj->text());
     temp.setEstado(ui->estadoatual->currentText());
     temp.setDestino(ui->destinoObj->text());
+
+    a.inserirObjeto(temp);
 
     ui->inputCi->clear();
     ui->inputObjeto->clear();
@@ -34,10 +40,6 @@ void MainWindow::on_btncadastrar_clicked()
     ui->tabela->insertRow(quantidade_linhas);
 
     inserirNaTabela(temp,quantidade_linhas);
-
-
-
-
 
     qDebug() << temp.getObj() << temp.getData() << temp.getCi() << temp.getEstado() << temp.getDestino() << temp.getValor();
 }
@@ -52,6 +54,22 @@ void MainWindow::inserirNaTabela(Cadastro a, int linha)
     ui->tabela->setItem(linha,3, new QTableWidgetItem(a.getData()));
     ui->tabela->setItem(linha,4, new QTableWidgetItem(a.getEstado()));
     ui->tabela->setItem(linha,5, new QTableWidgetItem(a.getDestino()));
+}
 
+void MainWindow::on_ordmenorcodigo_clicked()
+{
+    a.ordenarPorCodigo();
+    ui->tabela->clearContents();
+    for(int i=0; i<a.size();i++){
+        inserirNaTabela(a[i],i);
+    }
+}
 
+void MainWindow::on_ordmaiorvalor_clicked()
+{
+    a.ordenarPorValor();
+    ui->tabela->clearContents();
+    for(int i=0; i<a.size();i++){
+        inserirNaTabela(a[i],i);
+    }
 }

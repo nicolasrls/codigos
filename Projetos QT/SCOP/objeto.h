@@ -4,15 +4,19 @@
 #include <QVector>
 #include <algorithm>
 
-class objeto
+class Objeto
 {
 
 private:
     QVector <Cadastro> objetos;
 
 public:
-    objeto();
+    Objeto();
     void inserirObjeto(Cadastro a);
+    void ordenarPorCodigo();
+    void ordenarPorValor();
+    int size();
+    Cadastro operator[](int indice);
 };
 
 #endif // OBJETO_H

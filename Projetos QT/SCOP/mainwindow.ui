@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>10</y>
       <width>861</width>
       <height>551</height>
      </rect>
@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -36,8 +36,8 @@
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>0</y>
+        <x>230</x>
+        <y>50</y>
         <width>441</width>
         <height>20</height>
        </rect>
@@ -61,150 +61,83 @@
        <string>SCOP - Cadastro de Objetos Para Envio</string>
       </property>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>17</x>
-        <y>20</y>
-        <width>831</width>
-        <height>461</height>
+        <x>150</x>
+        <y>90</y>
+        <width>508</width>
+        <height>138</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
+      <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_6">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <layout class="QVBoxLayout" name="verticalLayout_3">
                <item>
-                <layout class="QVBoxLayout" name="verticalLayout_3">
+                <layout class="QHBoxLayout" name="horizontalLayout">
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout">
-                   <item>
-                    <widget class="QLabel" name="label">
-                     <property name="text">
-                      <string>Objeto:</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLineEdit" name="inputObjeto"/>
-                   </item>
-                  </layout>
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>Objeto:</string>
+                   </property>
+                  </widget>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_3">
-                   <item>
-                    <widget class="QLabel" name="label_3">
-                     <property name="text">
-                      <string>Valor do Objeto a ser postado:</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QDoubleSpinBox" name="valorobj"/>
-                   </item>
-                  </layout>
+                  <widget class="QLineEdit" name="inputObjeto"/>
                  </item>
                 </layout>
                </item>
                <item>
-                <layout class="QVBoxLayout" name="verticalLayout_2">
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_2">
-                   <item>
-                    <widget class="QLabel" name="label_2">
-                     <property name="text">
-                      <string>Código de identificação(C.I):</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLineEdit" name="inputCi"/>
-                   </item>
-                  </layout>
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>Valor do Objeto a ser postado:</string>
+                   </property>
+                  </widget>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_4">
-                   <item>
-                    <widget class="QLabel" name="label_4">
-                     <property name="text">
-                      <string>Data de postagem:</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QDateEdit" name="edicaodata"/>
-                   </item>
-                  </layout>
+                  <widget class="QDoubleSpinBox" name="valorobj"/>
                  </item>
                 </layout>
                </item>
               </layout>
              </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
-                <widget class="QLabel" name="label_5">
-                 <property name="text">
-                  <string>Estado Atual do objeto:</string>
-                 </property>
-                </widget>
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <widget class="QLabel" name="label_2">
+                   <property name="text">
+                    <string>Código de identificação(C.I):</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="inputCi"/>
+                 </item>
+                </layout>
                </item>
                <item>
-                <widget class="QComboBox" name="estadoatual">
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
                  <item>
-                  <property name="text">
-                   <string>----SELECIONE-----</string>
-                  </property>
+                  <widget class="QLabel" name="label_4">
+                   <property name="text">
+                    <string>Data de postagem:</string>
+                   </property>
+                  </widget>
                  </item>
                  <item>
-                  <property name="text">
-                   <string>Em vistoria</string>
-                  </property>
+                  <widget class="QDateEdit" name="edicaodata"/>
                  </item>
-                 <item>
-                  <property name="text">
-                   <string>Pronto para envio</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Aguardando recebimento</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Enviado</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Entregue</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_7">
-               <item>
-                <widget class="QLabel" name="label_7">
-                 <property name="text">
-                  <string>Destino</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="destinoObj"/>
+                </layout>
                </item>
               </layout>
              </item>
@@ -213,132 +146,186 @@
           </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="btncadastrar">
-           <property name="text">
-            <string>Cadastrar</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_8">
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Estado Atual do objeto:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="estadoatual">
+               <item>
+                <property name="text">
+                 <string>----SELECIONE-----</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Em vistoria</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pronto para envio</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Aguardando recebimento</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Enviado</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Entregue</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Destino</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="destinoObj"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QTableWidget" name="tabela">
-         <column>
-          <property name="text">
-           <string>Objeto</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>C.I</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Valor(R$)</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Data de Postagem</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Estado</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Destino</string>
-          </property>
-         </column>
+        <widget class="QPushButton" name="btncadastrar">
+         <property name="text">
+          <string>Cadastrar</string>
+         </property>
         </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>480</y>
-        <width>831</width>
-        <height>41</height>
+        <x>280</x>
+        <y>240</y>
+        <width>231</width>
+        <height>39</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Desenvolvido por: Nícolas Ribeiro(Eng. Elétrica).</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="ordmenorcodigo">
-           <property name="text">
-            <string>Ordenar por Menor Codigo</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="ordmaiorvalor">
-           <property name="text">
-            <string>Ordenar por Maior Valor</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-      </layout>
+      <property name="text">
+       <string>Desenvolvido por: Nícolas Ribeiro(Eng. Elétrica).</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>290</y>
+        <width>281</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_9"/>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
       <string>SCOP - Visualização</string>
      </attribute>
-     <layout class="QVBoxLayout" name="verticalLayout"/>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableWidget" name="tabela">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>837</width>
+          <height>449</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+</string>
+        </property>
+        <column>
+         <property name="text">
+          <string>Objeto</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>C.I</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <italic>true</italic>
+           <bold>true</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Valor(R$)</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Data de Postagem</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Estado</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Destino</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ordmenorcodigo">
+        <property name="text">
+         <string>Ordenar por Menor Codigo</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ordmaiorvalor">
+        <property name="text">
+         <string>Ordenar por Maior Valor</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
   </widget>
@@ -355,10 +342,42 @@
     <property name="title">
      <string>SCOP</string>
     </property>
+    <addaction name="actionAbrir_2"/>
+    <addaction name="actionSalvar_Dados_2"/>
    </widget>
    <addaction name="menuSCOP"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSalvar_Dados">
+   <property name="text">
+    <string>Salvar Dados</string>
+   </property>
+  </action>
+  <action name="actionCarregar_Dados">
+   <property name="text">
+    <string>Carregar Dados</string>
+   </property>
+  </action>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionNovo">
+   <property name="text">
+    <string>Novo</string>
+   </property>
+  </action>
+  <action name="actionAbrir_2">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionSalvar_Dados_2">
+   <property name="text">
+    <string>Salvar Dados</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
