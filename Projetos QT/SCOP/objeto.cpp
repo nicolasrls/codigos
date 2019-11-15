@@ -36,7 +36,7 @@ void Objeto::ordenarPorPeso()
 
 void Objeto::inserirNoArquivo()
 {
-    ifstream arquivo;
+    //ifstream arquivo;
 
 }
 

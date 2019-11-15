@@ -3,7 +3,7 @@
 #include "cadastro.h"
 #include <QVector>
 #include <algorithm>
-#include <fstream>
+
 
 class Objeto
 {

@@ -25,15 +25,16 @@ MainWindow::~MainWindow()
 void MainWindow::on_btncadastrar_clicked()
 {
 
-    temp.setCi(ui->inputCi->text());
-    temp.setObj(ui->inputObjeto->text());
-    temp.setData(ui->edicaodata->text());
-    temp.setValor(ui->valorobj->text());
-    temp.setEstado(ui->estadoatual->currentText());
-    temp.setDestino(ui->destinoObj->text());
-    temp.setPeso(ui->pesoobj->text());
+
 
     if((ui->inputCi->text())!= "" and (ui->inputObjeto->text())!="" and (ui->valorobj->text())!="" and (ui->destinoObj->text())!= "" and (ui->pesoobj->text())!=""){
+        temp.setCi(ui->inputCi->text());
+        temp.setObj(ui->inputObjeto->text());
+        temp.setData(ui->edicaodata->text());
+        temp.setValor(ui->valorobj->text());
+        temp.setEstado(ui->estadoatual->currentText());
+        temp.setDestino(ui->destinoObj->text());
+        temp.setPeso(ui->pesoobj->text());
         a.inserirObjeto(temp);
         int quantidade_linhas = ui->tabela->rowCount();
 
@@ -103,8 +104,7 @@ void MainWindow::on_ordpeso_clicked()
 
 void MainWindow::on_actionAbrir_triggered()
 {
-    ifstream arquivo;
-    arquivo.open()
+
 }
 
 void MainWindow::on_actionSalvar_triggered()
@@ -114,5 +114,6 @@ void MainWindow::on_actionSalvar_triggered()
 
 void MainWindow::on_actionSair_triggered()
 {
-
+   //para fechar o programa.
+   QApplication::quit();
 }
