@@ -3,10 +3,14 @@
 #include "cadastro.h"
 #include "objeto.h"
 #include <QPixmap>
+#include <QTextStream>
+#include <QFileDialog>
 
 QString local = "C:/Users/nicol/Documents/codigos/Projetos QT/SCOP/Arquivo/";
-QString nome = "dados_SCOP.csv";
+QString nome = "dados_SCOP.txt";
 
+QFile file(local+nome);
+QTextStream saida(&file);
 Cadastro temp;
 Objeto a;
 
@@ -26,9 +30,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btncadastrar_clicked()
 {
-
-
-
     if((ui->inputCi->text())!= "" and (ui->inputObjeto->text())!="" and (ui->valorobj->text())!="" and (ui->destinoObj->text())!= "" and (ui->pesoobj->text())!=""){
         temp.setCi(ui->inputCi->text());
         temp.setObj(ui->inputObjeto->text());
@@ -48,20 +49,13 @@ void MainWindow::on_btncadastrar_clicked()
     }else{
         QMessageBox::critical(this,"Erro","Um dos parâmetros estão vazios, favor preencher e tentar novamente.");
     }
-
     ui->inputCi->clear();
     ui->inputObjeto->clear();
     ui->destinoObj->clear();
     ui->valorobj->clear();
     ui->pesoobj->clear();
-
-    //ui->actionSalvar_Dados->
-
-
     qDebug() << temp.getObj() << temp.getData() << temp.getCi() << temp.getEstado() << temp.getDestino() << temp.getValor();
 }
-
-
 
 void MainWindow::inserirNaTabela(Cadastro a, int linha)
 {
@@ -106,16 +100,42 @@ void MainWindow::on_ordpeso_clicked()
 
 void MainWindow::on_actionAbrir_triggered()
 {
-    QFile arquivo(local+nome);
+    QString filtro = "Arquivo de texto (*.txt*)";
+    QString AbrirArquivo = QFileDialog::getOpenFileName(this, "Abrir Arquivos","C:/Users/nicol/Documents/codigos/Projetos QT/SCOP/Arquivo",filtro);
+    QFile arquivo(AbrirArquivo);
     if(!arquivo.open(QFile::ReadOnly|QFile::Text)){
-        QMessageBox::warning(this,"Erro","Erro ao abrir o arquivo.");
+        QMessageBox::critical(this,"ERRO","ERRO : Arquivo não pôde ser lido!");
+    }else{
+    QTextStream entrada(&arquivo);
+    QString texto;
+    ui->tabela->clearContents();
+    int quantidade_linhas = ui->tabela->rowCount();
+    ui->tabela->insertRow(quantidade_linhas);
+    for(int i = 0; i < 10;i++){
+        texto = entrada.readLine(i);
+        ui->tabela->setItem(quantidade_linhas,i, new QTableWidgetItem(texto));
+    }
+    QMessageBox::information(this,"Arquivo"," O arquivo foi lido, cheque a tabela!");
     }
 }
 
-void MainWindow::on_actionSalvar_triggered()
-{
-    QFile arquivo(local+nome);
-    //a.salvarArquivo(arquivo,a); AJEITAR O METODO DE SALVAR NO .CSV
+void MainWindow::on_actionSalvar_triggered(){
+    if(!file.open(QFile::WriteOnly|QFile::Text)){
+        QMessageBox::warning(this,"ERRO","ERRO : Arquivo não pôde ser salvo!");
+    }
+    for (int i=0; i< a.size(); i++){
+      saida<< "||Objeto: " << a[i].getObj() << endl;
+      saida<< "||Codigo: " << a[i].getCi() << endl;
+      saida<< "||Valor: R$" << a[i].getValor() << endl;
+      saida<< "||Data: " << a[i].getData() << endl;
+      saida<< "||Destino: " << a[i].getDestino() << endl;
+      saida<< "||Status: " << a[i].getEstado() << endl;
+      saida<< "||Peso: " << a[i].getPeso()<< "kg" << endl;
+    }
+    file.flush();
+    file.close();
+    QMessageBox::information(this,"Salvo","Arquivo salvo com sucesso!");
+
 }
 
 void MainWindow::on_actionSair_triggered()

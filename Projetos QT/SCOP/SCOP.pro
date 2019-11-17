@@ -37,3 +37,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     ArquivodeRecursos.qrc \
     ArquivodeRecursos.qrc
+
+DISTFILES += \
+    anotações.txt

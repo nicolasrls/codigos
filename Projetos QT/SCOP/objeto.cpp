@@ -26,7 +26,7 @@ void Objeto::ordenarPorValor()
 {
     std::sort(objetos.begin(),objetos.end(),[](Cadastro a, Cadastro b){
         return a.getValor()>b.getValor();
-    });
+    });    
 }
 
 void Objeto::ordenarPorPeso()
@@ -36,17 +36,7 @@ void Objeto::ordenarPorPeso()
     });
 }
 
-bool Objeto::salvarArquivo(QFile file, Objeto &b)
-{
-       if(!file.open(QIODevice::WriteOnly))
-           return false;
-       QTextStream out(&file);
-       for (int i=0; i<b.size(); i++)
-           out << "Objeto: " << b[i].getObj() << "Código :"<<b[i].getCi() << "Valor: " << b[i].getValor() << "Data: "  << b[i].getData() << "Destino" << b[i].getDestino() << "Estado:" << b[i].getEstado() << "Peso:" << b[i].getPeso() << endl;
-       file.flush();
-       file.close();
-       return true;
-}
+
 
 
 int Objeto::size()
