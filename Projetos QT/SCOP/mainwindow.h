@@ -35,6 +35,8 @@ private slots:
 
     void on_actionSair_triggered();
 
+    void on_actionAlterar_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

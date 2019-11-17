@@ -114,11 +114,17 @@ void MainWindow::on_actionAbrir_triggered()
 
 void MainWindow::on_actionSalvar_triggered()
 {
-    QFile arquivo1(local+nome);
+    QFile arquivo(local+nome);
+    //a.salvarArquivo(arquivo,a); AJEITAR O METODO DE SALVAR NO .CSV
 }
 
 void MainWindow::on_actionSair_triggered()
 {
    //para fechar o programa.
    QApplication::quit();
+}
+
+void MainWindow::on_actionAlterar_triggered()
+{
+
 }

@@ -19,7 +19,8 @@ public:
     void ordenarPorCodigo();
     void ordenarPorValor();
     void ordenarPorPeso();
-    void salvarnoArquivo(QFile a);
+    bool salvarArquivo(QFile file, Objeto &b);
+    bool carregarArquivo(QString &arquivo, Objeto &b);
     int size();
     Cadastro operator[](int indice);
 };

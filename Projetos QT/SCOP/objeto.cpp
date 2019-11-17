@@ -36,14 +36,18 @@ void Objeto::ordenarPorPeso()
     });
 }
 
-void Objeto::salvarnoArquivo(QFile arquivo)
+bool Objeto::salvarArquivo(QFile file, Objeto &b)
 {
-    if(!arquivo.open(QFile::WriteOnly|QFile::Text)){
-       // QMessageBox::warning(this,"Erro","Erro ao abrir o arquivo.");
-    }
-    arquivo.flush();
-    arquivo.close();
+       if(!file.open(QIODevice::WriteOnly))
+           return false;
+       QTextStream out(&file);
+       for (int i=0; i<b.size(); i++)
+           out << "Objeto: " << b[i].getObj() << "Código :"<<b[i].getCi() << "Valor: " << b[i].getValor() << "Data: "  << b[i].getData() << "Destino" << b[i].getDestino() << "Estado:" << b[i].getEstado() << "Peso:" << b[i].getPeso() << endl;
+       file.flush();
+       file.close();
+       return true;
 }
+
 
 int Objeto::size()
 {
