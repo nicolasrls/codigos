@@ -82,7 +82,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QDoubleSpinBox" name="valorobj"/>
+            <widget class="QLineEdit" name="valorobj"/>
            </item>
           </layout>
          </item>
@@ -455,6 +455,9 @@ background-color: rgb(0,0,0);</string>
    <property name="text">
     <string>Abrir</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="actionSalvar">
    <property name="icon">
@@ -464,10 +467,16 @@ background-color: rgb(0,0,0);</string>
    <property name="text">
     <string>Salvar</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
   </action>
   <action name="actionSair">
    <property name="text">
     <string>Sair</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
    </property>
   </action>
   <action name="actionAlterar">

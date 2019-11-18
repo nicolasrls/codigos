@@ -8,6 +8,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "cadastro.h"
+#include "objeto.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

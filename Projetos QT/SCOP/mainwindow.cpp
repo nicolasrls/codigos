@@ -6,11 +6,7 @@
 #include <QTextStream>
 #include <QFileDialog>
 
-QString local = "C:/Users/nicol/Documents/codigos/Projetos QT/SCOP/Arquivo/";
-QString nome = "dados_SCOP.txt";
 
-QFile file(local+nome);
-QTextStream saida(&file);
 Cadastro temp;
 Objeto a;
 
@@ -100,40 +96,25 @@ void MainWindow::on_ordpeso_clicked()
 
 void MainWindow::on_actionAbrir_triggered()
 {
-    QString filtro = "Arquivo de texto (*.txt*)";
-    QString AbrirArquivo = QFileDialog::getOpenFileName(this, "Abrir Arquivos","C:/Users/nicol/Documents/codigos/Projetos QT/SCOP/Arquivo",filtro);
-    QFile arquivo(AbrirArquivo);
-    if(!arquivo.open(QFile::ReadOnly|QFile::Text)){
-        QMessageBox::critical(this,"ERRO","ERRO : Arquivo não pôde ser lido!");
+    QString filename;
+    filename = QFileDialog::getOpenFileName(this, "Abrir Arquivo","","*.csv*");
+    if(a.carregarArquivo(filename) == 1){
+            QMessageBox::critical(this,"Arquivo"," O arquivo já foi lido, favor cheque a tabela!");
     }else{
-    QTextStream entrada(&arquivo);
-    QString texto;
-    ui->tabela->clearContents();
-    int quantidade_linhas = ui->tabela->rowCount();
-    ui->tabela->insertRow(quantidade_linhas);
-    for(int i = 0; i < 10;i++){
-        texto = entrada.readLine(i);
-        ui->tabela->setItem(quantidade_linhas,i, new QTableWidgetItem(texto));
+    for(int i=0;i<a.size();i++){
+        ui->tabela->insertRow(i);
+        inserirNaTabela(a[i],i);
     }
     QMessageBox::information(this,"Arquivo"," O arquivo foi lido, cheque a tabela!");
     }
+
 }
 
 void MainWindow::on_actionSalvar_triggered(){
-    if(!file.open(QFile::WriteOnly|QFile::Text)){
-        QMessageBox::warning(this,"ERRO","ERRO : Arquivo não pôde ser salvo!");
-    }
-    for (int i=0; i< a.size(); i++){
-      saida<< "||Objeto: " << a[i].getObj() << endl;
-      saida<< "||Codigo: " << a[i].getCi() << endl;
-      saida<< "||Valor: R$" << a[i].getValor() << endl;
-      saida<< "||Data: " << a[i].getData() << endl;
-      saida<< "||Destino: " << a[i].getDestino() << endl;
-      saida<< "||Status: " << a[i].getEstado() << endl;
-      saida<< "||Peso: " << a[i].getPeso()<< "kg" << endl;
-    }
-    file.flush();
-    file.close();
+
+    QString filename;
+    filename = QFileDialog::getSaveFileName(this,"Salvar Arquivo","","*.csv");
+    a.salvarArquivo(filename);
     QMessageBox::information(this,"Salvo","Arquivo salvo com sucesso!");
 
 }

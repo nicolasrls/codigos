@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <QFile>
 #include <QFileDialog>
+#include <QStringList>
 #include <QMessageBox>
 
 
@@ -20,10 +21,11 @@ public:
     void ordenarPorCodigo();
     void ordenarPorValor();
     void ordenarPorPeso();
-    //bool salvarArquivo(QString &arquivo);
-   // bool carregarArquivo(QString &arquivo, Objeto &b);
+    void salvarArquivo(QString arquivo);
+    bool carregarArquivo(QString arquivo);
     int size();
     Cadastro operator[](int indice);
+    bool jaSalvo(QFile arquivo);
 };
 
 #endif // OBJETO_H
