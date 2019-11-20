@@ -26,6 +26,14 @@ public:
     int size();
     Cadastro operator[](int indice);
     bool jaSalvo(QFile arquivo);
+    void eraseObj(QString txt);
+    void eraseCi(QString txt);
+    void eraseData(QString txt);
+    void eraseValor(QString txt);
+    void erasePeso(QString txt);
+    void eraseStatus(QString txt);
+    void eraseDestino(QString txt);
+
 };
 
 #endif // OBJETO_H

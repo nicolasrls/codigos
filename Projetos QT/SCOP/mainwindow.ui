@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>954</width>
-    <height>639</height>
+    <width>1080</width>
+    <height>770</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,15 +19,15 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>931</width>
-      <height>601</height>
+      <width>1071</width>
+      <height>751</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -274,6 +274,19 @@ background-color: rgb(0,0,0);</string>
        </item>
       </layout>
      </widget>
+     <widget class="QPushButton" name="btnAjuda">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>330</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ajuda? Clique aqui.</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -395,13 +408,6 @@ background-color: rgb(0,0,0);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="ordpeso">
-        <property name="text">
-         <string>Ordenar por Menor Peso</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="ordmaiorvalor">
         <property name="text">
          <string>Ordenar por Maior Valor</string>
@@ -415,6 +421,13 @@ background-color: rgb(0,0,0);</string>
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="ordpeso">
+        <property name="text">
+         <string>Ordenar por Menor Peso</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </widget>
@@ -424,7 +437,7 @@ background-color: rgb(0,0,0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>954</width>
+     <width>1080</width>
      <height>21</height>
     </rect>
    </property>
@@ -441,7 +454,6 @@ background-color: rgb(0,0,0);</string>
     <property name="title">
      <string>Editar</string>
     </property>
-    <addaction name="actionAlterar"/>
     <addaction name="actionExcluir"/>
    </widget>
    <addaction name="menuSCOP"/>
@@ -477,15 +489,6 @@ background-color: rgb(0,0,0);</string>
    </property>
    <property name="shortcut">
     <string>Esc</string>
-   </property>
-  </action>
-  <action name="actionAlterar">
-   <property name="icon">
-    <iconset>
-     <normaloff>../../../../Downloads/Aula_17/icones/editar_ico.png</normaloff>../../../../Downloads/Aula_17/icones/editar_ico.png</iconset>
-   </property>
-   <property name="text">
-    <string>Alterar</string>
    </property>
   </action>
   <action name="actionExcluir">

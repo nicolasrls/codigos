@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QMessageBox>
 #include <QFile>
+#include <QInputDialog>
 #include <QTextStream>
 #include "cadastro.h"
 #include "objeto.h"
@@ -36,7 +37,11 @@ private slots:
 
     void on_actionSair_triggered();
 
-    void on_actionAlterar_triggered();
+
+
+    void on_tabela_cellDoubleClicked(int row, int column);
+
+    void on_btnAjuda_clicked();
 
 private:
     Ui::MainWindow *ui;
