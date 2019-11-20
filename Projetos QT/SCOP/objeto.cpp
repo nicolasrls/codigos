@@ -93,6 +93,15 @@ void Objeto::eraseObj(QString txt)
     }
 }
 
+void Objeto::apagarObj(QString txt)
+{
+    for(int i = 0; i < objetos.size(); i++){
+        if(objetos[i].getObj() == txt){
+            objetos.erase(objetos.begin()+i);
+        }
+    }
+}
+
 void Objeto::eraseCi(QString txt)
 {
     for(int i = 0; i < objetos.size(); i++){

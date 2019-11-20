@@ -290,3 +290,20 @@ void MainWindow::on_btnAjuda_clicked()
 {
 
 }
+
+void MainWindow::on_actionExcluir_triggered()
+{
+    QMessageBox::StandardButton resp = QMessageBox::question(this, "Excluir Itens", "Você deseja excluir um item?");
+    if(resp == QMessageBox::Yes){
+    bool ok;
+    QString txt = QInputDialog::getText(this, "Excluir Itens", "Qual item deseja excluir", QLineEdit::Normal,"",&ok);
+    if(ok and !txt.isEmpty()){
+        a.apagarObj(txt);
+        }
+    }
+}
+
+void MainWindow::on_actionLimpar_Tabela_triggered()
+{
+    ui->tabela->clearContents();
+}

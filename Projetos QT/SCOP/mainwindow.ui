@@ -455,6 +455,7 @@ background-color: rgb(0,0,0);</string>
      <string>Editar</string>
     </property>
     <addaction name="actionExcluir"/>
+    <addaction name="actionLimpar_Tabela"/>
    </widget>
    <addaction name="menuSCOP"/>
    <addaction name="menuEditar"/>
@@ -498,6 +499,11 @@ background-color: rgb(0,0,0);</string>
    </property>
    <property name="text">
     <string>Excluir</string>
+   </property>
+  </action>
+  <action name="actionLimpar_Tabela">
+   <property name="text">
+    <string>Limpar Tabela</string>
    </property>
   </action>
  </widget>

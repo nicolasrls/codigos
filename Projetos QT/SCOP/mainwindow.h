@@ -43,6 +43,10 @@ private slots:
 
     void on_btnAjuda_clicked();
 
+    void on_actionExcluir_triggered();
+
+    void on_actionLimpar_Tabela_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
