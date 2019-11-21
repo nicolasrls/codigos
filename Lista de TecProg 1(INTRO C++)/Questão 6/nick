@@ -1,0 +1,17 @@
+    case '+' :
+    float soma = a1+a2;
+    cout << "Resultado = " << soma << endl;
+    break;
+
+    case '*'
+    mult = a1*a2;
+    cout << "Resultado = " << mult << endl;
+    break;
+
+    case '/' :
+    div = a1/a2;
+    cout << "Resultado = " << div << endl;
+    break;
+
+
+

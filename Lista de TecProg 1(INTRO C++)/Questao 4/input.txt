@@ -1,0 +1,2 @@
+Estou adicionando uma linha
+C++ é mais fácil que C

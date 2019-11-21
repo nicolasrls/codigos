@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+float quadrado(float valor) // impossível usar uma função void para retornar um valor na função main!!!!
+{
+    float qd = 0;
+
+    qd = (valor * valor);
+
+    return qd;
+}
+
+int main()
+{
+    float nmr;
+
+    cout << "digite um valor" << endl;
+    cin >> nmr;
+
+    cout << quadrado(nmr) << endl;
+
+    return (0);
+}
