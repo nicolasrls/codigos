@@ -305,5 +305,10 @@ void MainWindow::on_actionExcluir_triggered()
 
 void MainWindow::on_actionLimpar_Tabela_triggered()
 {
-    ui->tabela->clearContents();
+
+    for(int i = 0; i < ui->tabela->rowCount() ; i++){
+        ui->tabela->rowCount();
+        ui->tabela->removeRow(i);
+    }
+    ui->tabela->removeRow(0);
 }
