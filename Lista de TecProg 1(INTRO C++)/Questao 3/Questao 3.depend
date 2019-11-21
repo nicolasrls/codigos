@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1567381697 source:c:\users\nicol\documents\faculdade\tec de programação\questao 3\main.cpp
+	<iostream>
+	<locale.h>
+	<fstream>
+
