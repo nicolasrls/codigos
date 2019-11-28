@@ -22,12 +22,12 @@ void Cadastro::setCi(const QString &value)
     ci = value;
 }
 
-QString Cadastro::getValor() const
+double Cadastro::getValor() const
 {
     return valor;
 }
 
-void Cadastro::setValor(const QString &value)
+void Cadastro::setValor(const double &value)
 {
     valor = value;
 }
@@ -62,12 +62,12 @@ void Cadastro::setDestino(const QString &value)
     destino = value;
 }
 
-QString Cadastro::getPeso() const
+double Cadastro::getPeso() const
 {
     return peso;
 }
 
-void Cadastro::setPeso(const QString &value)
+void Cadastro::setPeso(const double &value)
 {
     peso = value;
 }

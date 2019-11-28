@@ -18,16 +18,16 @@ private:
 public:
     Objeto();
     void inserirObjeto(Cadastro a);
+    bool objetoExiste(Cadastro a);
     void ordenarPorCodigo();
     void ordenarPorValor();
     void ordenarPorPeso();
-    void salvarArquivo(QString arquivo);
+    bool salvarArquivo(QString arquivo);
     bool carregarArquivo(QString arquivo);
     int size();
     Cadastro operator[](int indice);
-    bool jaSalvo(QFile arquivo);
     void eraseObj(QString txt);
-    void apagarObj(QString txt);
+    bool apagarObj(QString txt);
     void eraseCi(QString txt);
     void eraseData(QString txt);
     void eraseValor(QString txt);

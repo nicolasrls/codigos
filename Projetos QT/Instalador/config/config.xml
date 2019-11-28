@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Instalador do SCOP</Name>
+    <Version>1.0.0</Version>
+    <Title>SCOP - SISTEMA DE CADASTRO DE OBJETOS POSTAIS</Title>
+    <Publisher>Nícolas Ribeiro</Publisher>
+    <!-- Directory name is used in component.xml -->
+    <StartMenuDir>SCOP</StartMenuDir>
+    <TargetDir>@HomeDir@/SCOP_files/startmenu</TargetDir>
+</Installer>

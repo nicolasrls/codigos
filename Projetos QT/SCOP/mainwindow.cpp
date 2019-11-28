@@ -1,10 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "cadastro.h"
-#include "objeto.h"
-#include <QPixmap>
-#include <QTextStream>
-#include <QFileDialog>
+
 
 
 Cadastro temp;
@@ -15,13 +11,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap logo("C:/Users/nicol/Documents/codigos/Projetos QT/SCOP/scopimg.png");
-    ui->labelimg->setPixmap(logo.scaled(151,141,Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+
 }
 
 void MainWindow::on_btncadastrar_clicked()
@@ -30,18 +25,24 @@ void MainWindow::on_btncadastrar_clicked()
         temp.setCi(ui->inputCi->text());
         temp.setObj(ui->inputObjeto->text());
         temp.setData(ui->edicaodata->text());
-        temp.setValor(ui->valorobj->text());
+        temp.setValor(ui->valorobj->text().toDouble());
         temp.setEstado(ui->estadoatual->currentText());
         temp.setDestino(ui->destinoObj->text());
-        temp.setPeso(ui->pesoobj->text());
-        a.inserirObjeto(temp);
+        temp.setPeso(ui->pesoobj->text().toDouble());
+
         int quantidade_linhas = ui->tabela->rowCount();
 
+        if(a.objetoExiste(temp) == 1){
+            QMessageBox::critical(this,"Opa...","O objeto já existe, favor editar na aba da tabela");
+        }else{
+        a.inserirObjeto(temp);
         ui->tabela->insertRow(quantidade_linhas);
-
         inserirNaTabela(temp,quantidade_linhas);
         QMessageBox::information(this,"Cadastro:","Cadastrado com sucesso!");
-
+        ui->tabela->setColumnWidth(0,195);
+        ui->tabela->setColumnWidth(3,199);
+        ui->tabela->setColumnWidth(4,250);
+        }
     }else{
         QMessageBox::critical(this,"Erro","Um dos parâmetros estão vazios, favor preencher e tentar novamente.");
     }
@@ -57,11 +58,11 @@ void MainWindow::inserirNaTabela(Cadastro a, int linha)
 {
     ui->tabela->setItem(linha,0, new QTableWidgetItem(a.getObj()));
     ui->tabela->setItem(linha,1, new QTableWidgetItem(a.getCi()));
-    ui->tabela->setItem(linha,2, new QTableWidgetItem(a.getValor()));
+    ui->tabela->setItem(linha,2, new QTableWidgetItem(QString::number(a.getValor())));
     ui->tabela->setItem(linha,3, new QTableWidgetItem(a.getData()));
     ui->tabela->setItem(linha,4, new QTableWidgetItem(a.getEstado()));
     ui->tabela->setItem(linha,5, new QTableWidgetItem(a.getDestino()));
-    ui->tabela->setItem(linha,6, new QTableWidgetItem(a.getPeso()));
+    ui->tabela->setItem(linha,6, new QTableWidgetItem(QString::number(a.getPeso())));
 }
 
 void MainWindow::on_ordmenorcodigo_clicked()
@@ -97,25 +98,27 @@ void MainWindow::on_ordpeso_clicked()
 void MainWindow::on_actionAbrir_triggered()
 {
     QString filename;
-    filename = QFileDialog::getOpenFileName(this, "Abrir Arquivo","","*.csv");
-    ui->tabela->clearContents();
+    filename = QFileDialog::getOpenFileName(this, "Abrir Arquivo","","Arquivo separado por vírgulas(*.csv)");
     if(a.carregarArquivo(filename) == 1){
         QMessageBox::critical(this,"Arquivo"," O arquivo já foi lido, favor cheque a tabela!");
     }else{
+        ui->tabela->clearContents();
+        on_actionLimpar_Tabela_triggered();
         for(int i=0;i<a.size();i++){
             ui->tabela->insertRow(i);
             inserirNaTabela(a[i],i);
         }
+
+        QMessageBox::information(this,"Arquivo"," O arquivo foi lido, cheque a tabela!");
     }
-    QMessageBox::information(this,"Arquivo"," O arquivo foi lido, cheque a tabela!");
 }
 
 void MainWindow::on_actionSalvar_triggered(){
 
     QString filename;
     filename = QFileDialog::getSaveFileName(this,"Salvar Arquivo","","*.csv");
-    a.salvarArquivo(filename);
-    QMessageBox::information(this,"Salvo","Arquivo salvo com sucesso!");
+    if(a.salvarArquivo(filename) == 1)QMessageBox::information(this,"Salvo","Arquivo salvo com sucesso!");
+    else QMessageBox::critical(this,"Erro", "O arquivo não foi salvo.");
 
 }
 
@@ -125,8 +128,6 @@ void MainWindow::on_actionSair_triggered()
    QApplication::quit();
 }
 
-
-
 void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
 {
     if(column == 0){
@@ -135,7 +136,6 @@ void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
         bool ok;
         QString txt = QInputDialog::getText(this, "Alterar Objeto", "Digite o novo objeto", QLineEdit::Normal,"",&ok);
         if(ok and !txt.isEmpty()){
-            qDebug() << txt;
             temp.setObj(txt);
             temp.setCi(a[row].getCi());
             temp.setData(a[row].getData());
@@ -143,7 +143,6 @@ void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
             temp.setEstado(a[row].getEstado());
             temp.setDestino(a[row].getDestino());
             temp.setPeso(a[row].getPeso());
-            qDebug() << temp.getObj() << temp.getData() << temp.getCi() << temp.getEstado() << temp.getDestino() << temp.getValor() << temp.getPeso();
             a.eraseObj(txt);
             a.inserirObjeto(temp);
             ui->tabela->setItem(row, column, new QTableWidgetItem(temp.getObj()));
@@ -158,7 +157,7 @@ void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
         bool ok;
         QString txt = QInputDialog::getText(this, "Alterar CI", "Digite o novo CI", QLineEdit::Normal,"",&ok);
         if(ok and !txt.isEmpty()){
-            qDebug() << txt;
+
             temp.setObj(a[row].getObj());
             temp.setCi(txt);
             temp.setData(a[row].getData());
@@ -180,17 +179,17 @@ void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
         bool ok;
         QString txt = QInputDialog::getText(this, "Alterar Valor", "Digite o novo valor", QLineEdit::Normal,"",&ok);
         if(ok and !txt.isEmpty()){
-            qDebug() << txt;
+
             temp.setObj(a[row].getObj());
             temp.setCi(a[row].getCi());
             temp.setData(a[row].getData());
-            temp.setValor(txt);
+            temp.setValor(txt.toDouble());
             temp.setEstado(a[row].getEstado());
             temp.setDestino(a[row].getDestino());
             temp.setPeso(a[row].getPeso());
             a.eraseCi(txt);
             a.inserirObjeto(temp);
-            ui->tabela->setItem(row, column, new QTableWidgetItem(temp.getValor()));
+            ui->tabela->setItem(row, column, new QTableWidgetItem(QString::number(temp.getValor())));
         }else{
            QMessageBox::critical(this, "Erro", "O objeto a ser editado está vazio.");
             }
@@ -200,9 +199,9 @@ void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
         QMessageBox::StandardButton resp = QMessageBox::question(this, "Editar Itens", "Você deseja editar este item?");
     if(resp == QMessageBox::Yes){
         bool ok;
-        QString txt = QInputDialog::getText(this, "Alterar Data de Postagem", "Digite a nova data:", QLineEdit::Normal,"",&ok);
+        QString txt = QInputDialog::getText(this, "Alterar Data de Postagem", "Digite a nova data:",QLineEdit::Normal,"",&ok);
         if(ok and !txt.isEmpty()){
-            qDebug() << txt;
+
             temp.setObj(a[row].getObj());
             temp.setCi(a[row].getCi());
             temp.setData(txt);
@@ -224,7 +223,7 @@ void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
         bool ok;
         QString txt = QInputDialog::getText(this, "Alterar Status do objeto", "Digite o novo status:", QLineEdit::Normal,"",&ok);
         if(ok and !txt.isEmpty()){
-            qDebug() << txt;
+
             temp.setObj(a[row].getObj());
             temp.setCi(a[row].getCi());
             temp.setData(a[row].getData());
@@ -246,7 +245,7 @@ void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
         bool ok;
         QString txt = QInputDialog::getText(this, "Alterar Destino", "Digite o novo destino", QLineEdit::Normal,"",&ok);
         if(ok and !txt.isEmpty()){
-            qDebug() << txt;
+
             temp.setObj(a[row].getObj());
             temp.setCi(a[row].getCi());
             temp.setData(a[row].getData());
@@ -268,27 +267,21 @@ void MainWindow::on_tabela_cellDoubleClicked(int row, int column)
         bool ok;
         QString txt = QInputDialog::getText(this, "Alterar Valor", "Digite o novo valor", QLineEdit::Normal,"",&ok);
         if(ok and !txt.isEmpty()){
-            qDebug() << txt;
             temp.setObj(a[row].getObj());
             temp.setCi(a[row].getCi());
             temp.setData(a[row].getData());
             temp.setValor(a[row].getValor());
             temp.setEstado(a[row].getEstado());
             temp.setDestino(a[row].getDestino());
-            temp.setPeso(txt);
+            temp.setPeso(txt.toDouble());
             a.eraseDestino(txt);
             a.inserirObjeto(temp);
-            ui->tabela->setItem(row, column, new QTableWidgetItem(temp.getPeso()));
+            ui->tabela->setItem(row, column, new QTableWidgetItem(QString::number(temp.getPeso())));
         }else{
            QMessageBox::critical(this, "Erro", "O objeto a ser editado está vazio.");
             }
         }
     }
-}
-
-void MainWindow::on_btnAjuda_clicked()
-{
-
 }
 
 void MainWindow::on_actionExcluir_triggered()
@@ -297,18 +290,47 @@ void MainWindow::on_actionExcluir_triggered()
     if(resp == QMessageBox::Yes){
     bool ok;
     QString txt = QInputDialog::getText(this, "Excluir Itens", "Qual item deseja excluir", QLineEdit::Normal,"",&ok);
+    qDebug() << txt;
     if(ok and !txt.isEmpty()){
-        a.apagarObj(txt);
+        if(a.apagarObj(txt) != 0){
+            on_actionLimpar_Tabela_triggered();
+            for(int j=0; j < a.size(); j++){
+                ui->tabela->insertRow(ui->tabela->rowCount());
+                inserirNaTabela(a[j],j);
+            }
+            QMessageBox::information(this,"OK","O objeto foi excluído");
+        }else{
+            QMessageBox::warning(this,"Erro","O objeto não existe.");
         }
+    }else{
+        QMessageBox::warning(this,"Erro","O texto está vazio");
+    }
     }
 }
 
 void MainWindow::on_actionLimpar_Tabela_triggered()
 {
 
-    for(int i = 0; i < ui->tabela->rowCount() ; i++){
-        ui->tabela->rowCount();
-        ui->tabela->removeRow(i);
+    int qtdeLinhas = ui->tabela->rowCount();
+    for(int i = 0; i < qtdeLinhas ; i++)
+        ui->tabela->removeRow(0);
+
+
+}
+
+void MainWindow::on_limpartab_clicked()
+{
+    on_actionLimpar_Tabela_triggered();
+    QMessageBox::information(this,"Limpo","A tabela foi resetada com sucesso");
+}
+
+
+void MainWindow::on_actionAtualizar_Tabela_triggered()
+{
+    on_actionLimpar_Tabela_triggered();
+    for(int j=0; j < a.size(); j++){
+        ui->tabela->insertRow(ui->tabela->rowCount());
+        inserirNaTabela(a[j],j);
     }
-    ui->tabela->removeRow(0);
+    QMessageBox::information(this,"Atualizada","A tabela foi atualizada com sucesso.");
 }
