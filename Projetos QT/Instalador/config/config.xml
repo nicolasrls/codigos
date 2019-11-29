@@ -6,5 +6,5 @@
     <Publisher>Nícolas Ribeiro</Publisher>
     <!-- Directory name is used in component.xml -->
     <StartMenuDir>SCOP</StartMenuDir>
-    <TargetDir>@HomeDir@/SCOP_files/startmenu</TargetDir>
+    <TargetDir>@HomeDir@/SCOP_files</TargetDir>
 </Installer>

@@ -54,7 +54,7 @@ bool Objeto::salvarArquivo(QString file)
     if(arquivo.isOpen() == 1){
         for(auto a:objetos){
             QString linha = a.getObj() + "," + a.getCi() + "," + QString::number(a.getValor()) + "," + a.getData() + "," + a.getEstado() +","+ a.getDestino() + "," + QString::number(a.getPeso()) +"\n";
-            arquivo.write(linha.toLocal8Bit());           
+            arquivo.write(linha.toLocal8Bit());
         }
         arquivo.close();
         return 1;

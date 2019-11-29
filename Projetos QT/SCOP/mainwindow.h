@@ -14,6 +14,8 @@
 #include "cadastro.h"
 #include "objeto.h"
 #include "ajuda.h"
+#include <QDesktopServices>
+#include <QUrl>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -43,6 +45,8 @@ private slots:
     void on_limpartab_clicked();
 
     void on_actionAtualizar_Tabela_triggered();
+
+    void on_btnAjuda_clicked();
 
 private:
     Ui::MainWindow *ui;
