@@ -333,7 +333,7 @@ void MainWindow::on_actionAtualizar_Tabela_triggered()
 
 void MainWindow::on_btnAjuda_clicked()
 {
-    QString url = "";
+    QString url = "https://github.com/nicolasrls/SCOP/blob/master/README.md";
     QDesktopServices::openUrl(QUrl(url));
 }
 
