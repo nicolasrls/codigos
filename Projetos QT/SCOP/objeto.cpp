@@ -1,9 +1,5 @@
 #include "objeto.h"
 
-//QString local = "C:/Users/nicol/Documents/codigos/Projetos QT/SCOP/Arquivo/";
-//QString nome = "dados_SCOP.csv";
-
-
 void Objeto::inserirObjeto(Cadastro a)
 {
     objetos.push_back(a);
@@ -186,6 +182,11 @@ void Objeto::eraseDestino(QString txt)
             objetos.erase(objetos.begin()+i);
         }
     }
+}
+
+void Objeto::limparTudo()
+{
+    objetos.erase(objetos.begin(),objetos.end());
 }
 
 void Objeto::eraseValor(QString txt)

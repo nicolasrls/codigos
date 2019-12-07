@@ -13,7 +13,6 @@
 #include <QTextStream>
 #include "cadastro.h"
 #include "objeto.h"
-#include "ajuda.h"
 #include <QDesktopServices>
 #include <QUrl>
 
@@ -39,7 +38,7 @@ private slots:
     void on_actionAbrir_triggered();
     void on_actionSalvar_triggered();
     void on_actionSair_triggered();
-    void on_tabela_cellDoubleClicked(int row, int column);
+    void on_tabela_cellClicked(int row, int column);
     void on_actionExcluir_triggered();
     void on_actionLimpar_Tabela_triggered();
     void on_limpartab_clicked();
