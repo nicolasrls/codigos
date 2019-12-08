@@ -1,0 +1,127 @@
+// --------primeiro as bibliotecas----------
+
+#include "LiquidCrystal.h"
+
+class Meudisplay : public LiquidCrystal
+{
+
+public:
+    Meudisplay(int rs, int enable, int D4, int D5, int D6, int D7) : LiquidCrystal (rs, enable, D4, D5, D6, D7){};
+    void animation(String a, int interv);
+};
+
+class MeuLdr
+{
+private:
+    int pino;
+    float resistencia;
+public:
+    MeuLdr(int pin);
+    void setResistencia();
+    float retornoLdr();
+};
+
+class MeuLed
+{
+private:
+    int pin;
+
+public:
+    MeuLed(int pino);
+    void acende();
+    void apaga();
+    void pisca(int interv);
+};
+
+// ---------------------------agora as definições-----------------------------------
+void Meudisplay::animation(String a, int interv)
+{
+
+    clear();
+    setCursor(0,0);
+    print(a);
+    int i;
+    int j;
+  for( i = 0; i < 7 ; i++){
+        scrollDisplayLeft();
+        delay(interv);
+    }
+    for( j = 0; j < 7 ; i++){
+        scrollDisplayRight();
+        delay(interv);
+    }
+}
+
+
+MeuLdr::MeuLdr(int pin)
+{
+    pino = pin;
+    pinMode(pino, INPUT);
+}
+
+void MeuLdr::setResistencia()
+{
+    resistencia = map(analogRead(pino),0,492,10000,0);
+}
+
+float MeuLdr::retornoLdr()
+{
+    return resistencia;
+}
+
+MeuLed::MeuLed(int pino)
+{
+    pin = pino;
+    pinMode(pin, OUTPUT);
+}
+
+void MeuLed::acende()
+{
+    digitalWrite(pin, HIGH);
+}
+
+void MeuLed::apaga()
+{
+    digitalWrite(pin, LOW);
+}
+
+void MeuLed::pisca(int interv)
+{
+    digitalWrite(pin, HIGH);
+    delay(interv);
+    digitalWrite(pin, LOW);
+}
+
+
+
+MeuLed vermelho(5);
+MeuLed verde(4);
+MeuLdr ldr1(A0);
+Meudisplay lcd1(12,11,10,9,3,2);
+float op;
+
+void setup(){
+  Serial.begin(9600); //Inicializa a comunicação serial
+}
+
+void loop(){
+  ldr1.setResistencia();
+  Serial.print(ldr1.retornoLdr());
+  Serial.println(" Ohms");
+  lcd1.clear();
+  if((ldr1.retornoLdr() == 0) or (ldr1.retornoLdr() < 4500)){
+    verde.acende();
+    vermelho.apaga();
+    lcd1.setCursor(0,0);
+    lcd1.print("Vagas na vaga 1 ");
+    //lcd1.setCursor(0,1);
+    //lcd1.print("vaga 1 ");
+  }else{
+    verde.apaga();
+    vermelho.acende();
+    lcd1.print("Sem vagas");
+  }
+  delay(1000);
+}
+
+
