@@ -1,0 +1,8 @@
+//-------- para enviar pro heroku --------\\
+        criar conta no heroku --ok-- 
+        login no heroku pelo terminal "heroku login -i"
+    em seguida : heroku create "nome da pasta" --buildpack heroku/python 
+
+//-------------- no git: --------------------\\
+        usar "git push heroku master"    
+
