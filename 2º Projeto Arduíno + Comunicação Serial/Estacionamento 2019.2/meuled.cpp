@@ -8,17 +8,17 @@ MeuLed::MeuLed(int pino)
 
 void MeuLed::acende()
 {
-    digitalWrite(pin, HIGH);
+    digitalWrite(pin, LOW);
 }
 
 void MeuLed::apaga()
 {
-    digitalWrite(pin, LOW);
+    digitalWrite(pin, HIGH);
 }
 
 void MeuLed::pisca(int interv)
 {
-    digitalWrite(pin, HIGH);
-    delay(interv);
     digitalWrite(pin, LOW);
+    delay(interv);
+    digitalWrite(pin, HIGH);
 }
