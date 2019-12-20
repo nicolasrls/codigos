@@ -21,6 +21,7 @@ HEADERS += \
     MFRC522Extended.h \
     SPI.h \
     Servo.h \
+    String.h \
     deprecated.h \
     meuRFID.h \
     meuServo.h \

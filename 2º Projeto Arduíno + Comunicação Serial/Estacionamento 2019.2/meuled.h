@@ -1,6 +1,6 @@
 #ifndef MEULED_H
 #define MEULED_H
-
+#include "Arduino.h"
 
 class MeuLed
 {
@@ -31,9 +31,25 @@ void MeuLed::apaga()
 
 void MeuLed::pisca(int interv)
 {
+    digitalWrite(pin, HIGH);
+    delay(interv);
     digitalWrite(pin, LOW);
     delay(interv);
     digitalWrite(pin, HIGH);
+    delay(interv);
+    digitalWrite(pin, LOW);
+    delay(interv);
+    digitalWrite(pin, HIGH);
+    delay(interv);
+    digitalWrite(pin, LOW);
+    delay(interv);
+    digitalWrite(pin, HIGH);
+    delay(interv);
+    digitalWrite(pin, LOW);
+    delay(interv);
+    digitalWrite(pin, HIGH);
+    delay(interv);
+    digitalWrite(pin, LOW);
 }
 
 #endif // MEULED_H
