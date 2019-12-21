@@ -10,6 +10,8 @@ public:
     MeuLed(int pino);
     void acende();
     void apaga();
+    void acendeAnalog();
+    void apagaAnalog();
     void pisca(int interv);
 };
 
@@ -27,6 +29,16 @@ void MeuLed::acende()
 void MeuLed::apaga()
 {
     digitalWrite(pin, HIGH);
+}
+
+void MeuLed::acendeAnalog()
+{
+    analogWrite(pin,0);
+}
+
+void MeuLed::apagaAnalog()
+{
+    analogWrite(pin,255);
 }
 
 void MeuLed::pisca(int interv)

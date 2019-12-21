@@ -10,7 +10,6 @@ SOURCES += \
         codigo2proj.cpp \
         codigoquetadandocerto.cpp \
         main.cpp \
-        meudisplay.cpp \
         meuldr.cpp \
         meuled.cpp
 
@@ -25,10 +24,10 @@ HEADERS += \
     deprecated.h \
     meuRFID.h \
     meuServo.h \
-    meudisplay.h \
     meuldr.h \
     meuled.h \
-    require_cpp11.h
+    require_cpp11.h \
+    usuarios.h
 
 DISTFILES += \
     pTinkercad.txt
