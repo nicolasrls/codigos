@@ -69,7 +69,7 @@ void leituraRfid() {
     verde.apaga();
     vermelho.acende();
   }
-  if (strID.indexOf(SR_RIBEIRO) >= 0) {
+  else if (strID.indexOf(SR_RIBEIRO) >= 0) {
     nicolas.mudaStatus();
     vermelho.apaga();
     verde.acende();
@@ -80,7 +80,7 @@ void leituraRfid() {
     verde.apaga();
     vermelho.acende();
   }
-  if (strID.indexOf(SR_EDGAR) >= 0) {
+  else if (strID.indexOf(SR_EDGAR) >= 0) {
     danubio.mudaStatus();
     vermelho.apaga();
     verde.acende();
@@ -91,7 +91,7 @@ void leituraRfid() {
     verde.apaga();
     vermelho.acende();
   }
-  if (strID.indexOf(SR_LACOUTH) >= 0) {
+  else if (strID.indexOf(SR_LACOUTH) >= 0) {
     lacouth.mudaStatus();
     vermelho.apaga();
     verde.acende();
@@ -102,7 +102,7 @@ void leituraRfid() {
     verde.apaga();
     vermelho.acende();
   }
-  if (strID.indexOf(SR_LIMA) >= 0) {
+  else if (strID.indexOf(SR_LIMA) >= 0) {
     victor.mudaStatus();
     vermelho.apaga();
     verde.acende();
