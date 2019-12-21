@@ -1,7 +1,7 @@
 #ifndef MEUSERVO_H
 #define MEUSERVO_H
 #include "Servo.h"
-
+#include "Arduino.h"
 
 class meuServo : public Servo{
 private:
@@ -13,6 +13,7 @@ public:
     void iniciarCancela();
     void abrirCancela();
     void fecharCancela();
+    void usarCancela();
 };
 
 meuServo::meuServo(int pin)
@@ -46,6 +47,14 @@ void meuServo::fecharCancela()
       s.write(pos);
       delay(12);
     }
+}
+
+void meuServo::usarCancela()
+{
+    delay(2000);
+    abrirCancela();
+    delay(4000);
+    fecharCancela();
 }
 
 

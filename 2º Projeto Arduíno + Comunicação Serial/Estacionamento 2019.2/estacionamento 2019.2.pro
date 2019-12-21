@@ -24,6 +24,7 @@ HEADERS += \
     deprecated.h \
     meuRFID.h \
     meuServo.h \
+    meuestacionamento.h \
     meuldr.h \
     meuled.h \
     require_cpp11.h \
