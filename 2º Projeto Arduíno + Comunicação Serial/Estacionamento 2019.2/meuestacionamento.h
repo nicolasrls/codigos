@@ -13,6 +13,7 @@ private:
     String usuario;
 public:
     MeuEstacionamento(int numvaga, Usuarios b);
+    void iniciaVaga(MeuLed a);
     int getVaga() const;
     void setVaga(int value);
     bool getEstadoVaga() const;
@@ -31,7 +32,13 @@ MeuEstacionamento::MeuEstacionamento(int numvaga, Usuarios b)
 {
     setVaga(numvaga);
     setUsuario(b.getNome());
-    setEstadoVaga(false);
+}
+
+void MeuEstacionamento::iniciaVaga(MeuLed a)
+{
+    setEstadoVaga(true);
+    a.acendeAnalog();
+    a.apagaAnalog2();
 }
 
 String MeuEstacionamento::getUsuario() const
@@ -56,12 +63,12 @@ void MeuEstacionamento::setEstadoVaga(bool value)
 
 void MeuEstacionamento::mudaEstado(MeuLed a)
 {
-    if(estadoVaga == false){
-        setEstadoVaga(true);
-        a.acendeAnalog2();
-        a.apagaAnalog();
-    }else if(estadoVaga == true){
+    if(estadoVaga == true){
         setEstadoVaga(false);
+        a.apagaAnalog();
+        a.acendeAnalog2();
+    }else if(estadoVaga == false){
+        setEstadoVaga(true);
         a.acendeAnalog();
         a.apagaAnalog2();
     }
