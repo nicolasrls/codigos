@@ -10,6 +10,7 @@
 #define UI_WIDGET_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
@@ -23,6 +24,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
+    QAction *actionatualizar;
     QLabel *label;
     QPushButton *btnConectar;
     QLabel *label_3;
@@ -33,34 +35,42 @@ public:
     QGroupBox *groupBox;
     QPushButton *btnLiberaCancela;
     QLabel *label_4;
-    QLabel *labelVagas;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label_5;
     QLabel *label_6;
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_9;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *btnVaga1;
     QPushButton *btnVaga2;
     QPushButton *btnVaga3;
     QPushButton *btnVaga4;
     QPushButton *btnVaga5;
-    QWidget *widget2;
+    QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *labelVaga1;
     QLabel *labelVaga2;
     QLabel *labelVaga3;
     QLabel *labelVaga4;
     QLabel *labelVaga5;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *labelVagas1;
+    QLabel *labelVagas2;
+    QLabel *labelVagas3;
+    QLabel *labelVagas4;
+    QLabel *labelVagas5;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->resize(485, 419);
+        actionatualizar = new QAction(Widget);
+        actionatualizar->setObjectName(QString::fromUtf8("actionatualizar"));
         label = new QLabel(Widget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(60, 20, 361, 41));
@@ -92,101 +102,140 @@ public:
         label_4 = new QLabel(groupBox);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(10, 60, 101, 21));
-        labelVagas = new QLabel(groupBox);
-        labelVagas->setObjectName(QString::fromUtf8("labelVagas"));
-        labelVagas->setGeometry(QRect(110, 60, 241, 21));
-        widget = new QWidget(groupBox);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(30, 90, 431, 21));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(groupBox);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(30, 90, 431, 21));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
         horizontalLayout->addWidget(label_5);
 
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         horizontalLayout->addWidget(label_6);
 
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         horizontalLayout->addWidget(label_7);
 
-        label_8 = new QLabel(widget);
+        label_8 = new QLabel(layoutWidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         horizontalLayout->addWidget(label_8);
 
-        label_9 = new QLabel(widget);
+        label_9 = new QLabel(layoutWidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
 
         horizontalLayout->addWidget(label_9);
 
-        widget1 = new QWidget(groupBox);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(10, 110, 426, 31));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(groupBox);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(10, 110, 426, 31));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        btnVaga1 = new QPushButton(widget1);
+        btnVaga1 = new QPushButton(layoutWidget1);
         btnVaga1->setObjectName(QString::fromUtf8("btnVaga1"));
 
         horizontalLayout_2->addWidget(btnVaga1);
 
-        btnVaga2 = new QPushButton(widget1);
+        btnVaga2 = new QPushButton(layoutWidget1);
         btnVaga2->setObjectName(QString::fromUtf8("btnVaga2"));
 
         horizontalLayout_2->addWidget(btnVaga2);
 
-        btnVaga3 = new QPushButton(widget1);
+        btnVaga3 = new QPushButton(layoutWidget1);
         btnVaga3->setObjectName(QString::fromUtf8("btnVaga3"));
 
         horizontalLayout_2->addWidget(btnVaga3);
 
-        btnVaga4 = new QPushButton(widget1);
+        btnVaga4 = new QPushButton(layoutWidget1);
         btnVaga4->setObjectName(QString::fromUtf8("btnVaga4"));
 
         horizontalLayout_2->addWidget(btnVaga4);
 
-        btnVaga5 = new QPushButton(widget1);
+        btnVaga5 = new QPushButton(layoutWidget1);
         btnVaga5->setObjectName(QString::fromUtf8("btnVaga5"));
 
         horizontalLayout_2->addWidget(btnVaga5);
 
-        widget2 = new QWidget(groupBox);
-        widget2->setObjectName(QString::fromUtf8("widget2"));
-        widget2->setGeometry(QRect(30, 144, 421, 21));
-        horizontalLayout_3 = new QHBoxLayout(widget2);
+        layoutWidget2 = new QWidget(groupBox);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(30, 144, 421, 21));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        labelVaga1 = new QLabel(widget2);
+        labelVaga1 = new QLabel(layoutWidget2);
         labelVaga1->setObjectName(QString::fromUtf8("labelVaga1"));
+        labelVaga1->setScaledContents(true);
 
         horizontalLayout_3->addWidget(labelVaga1);
 
-        labelVaga2 = new QLabel(widget2);
+        labelVaga2 = new QLabel(layoutWidget2);
         labelVaga2->setObjectName(QString::fromUtf8("labelVaga2"));
 
         horizontalLayout_3->addWidget(labelVaga2);
 
-        labelVaga3 = new QLabel(widget2);
+        labelVaga3 = new QLabel(layoutWidget2);
         labelVaga3->setObjectName(QString::fromUtf8("labelVaga3"));
 
         horizontalLayout_3->addWidget(labelVaga3);
 
-        labelVaga4 = new QLabel(widget2);
+        labelVaga4 = new QLabel(layoutWidget2);
         labelVaga4->setObjectName(QString::fromUtf8("labelVaga4"));
 
         horizontalLayout_3->addWidget(labelVaga4);
 
-        labelVaga5 = new QLabel(widget2);
+        labelVaga5 = new QLabel(layoutWidget2);
         labelVaga5->setObjectName(QString::fromUtf8("labelVaga5"));
 
         horizontalLayout_3->addWidget(labelVaga5);
+
+        widget = new QWidget(groupBox);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(110, 55, 201, 31));
+        horizontalLayout_4 = new QHBoxLayout(widget);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        labelVagas1 = new QLabel(widget);
+        labelVagas1->setObjectName(QString::fromUtf8("labelVagas1"));
+        labelVagas1->setStyleSheet(QString::fromUtf8("image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);"));
+        labelVagas1->setScaledContents(true);
+
+        horizontalLayout_4->addWidget(labelVagas1);
+
+        labelVagas2 = new QLabel(widget);
+        labelVagas2->setObjectName(QString::fromUtf8("labelVagas2"));
+        labelVagas2->setStyleSheet(QString::fromUtf8("image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);"));
+        labelVagas2->setScaledContents(true);
+
+        horizontalLayout_4->addWidget(labelVagas2);
+
+        labelVagas3 = new QLabel(widget);
+        labelVagas3->setObjectName(QString::fromUtf8("labelVagas3"));
+        labelVagas3->setStyleSheet(QString::fromUtf8("image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);"));
+        labelVagas3->setScaledContents(true);
+
+        horizontalLayout_4->addWidget(labelVagas3);
+
+        labelVagas4 = new QLabel(widget);
+        labelVagas4->setObjectName(QString::fromUtf8("labelVagas4"));
+        labelVagas4->setStyleSheet(QString::fromUtf8("image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);"));
+        labelVagas4->setScaledContents(true);
+
+        horizontalLayout_4->addWidget(labelVagas4);
+
+        labelVagas5 = new QLabel(widget);
+        labelVagas5->setObjectName(QString::fromUtf8("labelVagas5"));
+        labelVagas5->setStyleSheet(QString::fromUtf8("image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);"));
+        labelVagas5->setScaledContents(true);
+
+        horizontalLayout_4->addWidget(labelVagas5);
 
 
         retranslateUi(Widget);
@@ -197,6 +246,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", nullptr));
+        actionatualizar->setText(QApplication::translate("Widget", "atualizar", nullptr));
         label->setText(QApplication::translate("Widget", "<html><head/><body><p align=\"center\">E<span style=\" font-size:10pt;\">stacionamento Empresarial 2019.2</span></p></body></html>", nullptr));
         btnConectar->setText(QApplication::translate("Widget", "Conectar", nullptr));
         label_3->setText(QApplication::translate("Widget", "Velocidade:", nullptr));
@@ -207,22 +257,26 @@ public:
         groupBox->setTitle(QApplication::translate("Widget", "Controle do estacionamento:", nullptr));
         btnLiberaCancela->setText(QApplication::translate("Widget", "Liberar Cancela", nullptr));
         label_4->setText(QApplication::translate("Widget", "Vagas dispon\303\255veis: ", nullptr));
-        labelVagas->setText(QString());
         label_5->setText(QApplication::translate("Widget", "Vaga 1:", nullptr));
         label_6->setText(QApplication::translate("Widget", "Vaga 2:", nullptr));
         label_7->setText(QApplication::translate("Widget", "Vaga 3:", nullptr));
         label_8->setText(QApplication::translate("Widget", "Vaga 4:", nullptr));
         label_9->setText(QApplication::translate("Widget", "Vaga 5:", nullptr));
-        btnVaga1->setText(QApplication::translate("Widget", "Ocupar/Liberar", nullptr));
-        btnVaga2->setText(QApplication::translate("Widget", "Ocupar/Liberar", nullptr));
-        btnVaga3->setText(QApplication::translate("Widget", "Ocupar/Liberar", nullptr));
-        btnVaga4->setText(QApplication::translate("Widget", "Ocupar/Liberar", nullptr));
-        btnVaga5->setText(QApplication::translate("Widget", "Ocupar/Liberar", nullptr));
+        btnVaga1->setText(QApplication::translate("Widget", "Alterar", nullptr));
+        btnVaga2->setText(QApplication::translate("Widget", "Alterar", nullptr));
+        btnVaga3->setText(QApplication::translate("Widget", "Alterar", nullptr));
+        btnVaga4->setText(QApplication::translate("Widget", "Alterar", nullptr));
+        btnVaga5->setText(QApplication::translate("Widget", "Alterar", nullptr));
         labelVaga1->setText(QString());
         labelVaga2->setText(QString());
         labelVaga3->setText(QString());
         labelVaga4->setText(QString());
         labelVaga5->setText(QString());
+        labelVagas1->setText(QString());
+        labelVagas2->setText(QString());
+        labelVagas3->setText(QString());
+        labelVagas4->setText(QString());
+        labelVagas5->setText(QString());
     } // retranslateUi
 
 };

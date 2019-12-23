@@ -42,7 +42,8 @@ void setup() {
     SPI.begin(); //INICIALIZA O BARRAMENTO SPI
     rfid.iniciaRFID(); //INICIALIZA O LEITOR
     s.iniciarCancela();
-    cancela.acende();
+    cancela.acende2();
+    cancela.apaga();
     vaga1.iniciaVaga(vg1);
     vaga2.iniciaVaga(vg2);
     vaga3.iniciaVaga(vg3);
@@ -83,60 +84,60 @@ void leituraRfid() {
     if (strID.indexOf(SR_RIBEIRO) >= 0) {
         vaga1.mudaEstado(vg1);
         vaga1.printSerial();
-        cancela.apaga();
-        cancela.acende2();
-        s.usarCancela();
         cancela.apaga2();
         cancela.acende();
+        s.usarCancela();
+        cancela.apaga();
+        cancela.acende2();
         doc["Vaga 1"] == vaga1.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else if (strID.indexOf(SR_LEANDRO) >= 0) {
         vaga2.mudaEstado(vg2);
         vaga2.printSerial();
-        cancela.apaga();
-        cancela.acende2();
-        s.usarCancela();
         cancela.apaga2();
         cancela.acende();
+        s.usarCancela();
+        cancela.apaga();
+        cancela.acende2();
         doc["Vaga 2"] == vaga2.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else if (strID.indexOf(SR_EDGAR) >= 0) {
         vaga3.mudaEstado(vg3);
         vaga3.printSerial();
-        cancela.apaga();
-        cancela.acende2();
-        s.usarCancela();
         cancela.apaga2();
         cancela.acende();
+        s.usarCancela();
+        cancela.apaga();
+        cancela.acende2();
         doc["Vaga 3"] == vaga3.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else if (strID.indexOf(SR_LACOUTH) >= 0) {
         vaga4.mudaEstado(vg4);
         vaga4.printSerial();
-        cancela.apaga();
-        cancela.acende2();
-        s.usarCancela();
         cancela.apaga2();
         cancela.acende();
+        s.usarCancela();
+        cancela.apaga();
+        cancela.acende2();
         doc["Vaga 4"] == vaga4.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else if (strID.indexOf(SR_LIMA) >= 0) {
         vaga5.mudaEstado(vg5);
-        cancela.apaga();
-        cancela.acende2();
-        s.usarCancela();
         cancela.apaga2();
         cancela.acende();
+        s.usarCancela();
+        cancela.apaga();
+        cancela.acende2();
         doc["Vaga 5"] == vaga5.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else { //SENÃO, FAZ (CASO A TAG LIDA NÃO SEJÁ VÁLIDA)
-        cancela.pisca(100);
-        cancela.acende();
+        cancela.pisca2(100);
+        cancela.acende2();
     }
     rfid.PICC_HaltA(); //PARADA DA LEITURA DO CARTÃO
     rfid.PCD_StopCrypto1(); //PARADA DA CRIPTOGRAFIA NO PCD
@@ -146,17 +147,17 @@ void leituraSerial(){
     if( Serial.available() > 0 ){
        deserializeJson(doc,Serial);
        if( doc["CNC"] == 1){
-           cancela.apaga();
-           cancela.acende2();
-           s.usarCancela();
-           cancela.apaga2();
-           cancela.acende();
+          cancela.apaga2();
+          cancela.acende();
+          s.usarCancela();
+          cancela.apaga();
+          cancela.acende2();
        }else if(doc["CNC"] == 0){
-           cancela.apaga();
-           cancela.acende2();
-           s.usarCancela();
-           cancela.apaga2();
-           cancela.acende();
+          cancela.apaga2();
+          cancela.acende();
+          s.usarCancela();
+          cancela.apaga();
+          cancela.acende2();
        }else if( doc["Vaga 1"] == 0){
            vaga1.mudaEstado(vg1);
            doc["Vaga 1"] == vaga1.getEstadoVaga();
@@ -208,4 +209,3 @@ void envioSerial(){
     doc["Vaga 4"] == vaga4.getEstadoVaga();
     doc["Vaga 5"] == vaga5.getEstadoVaga();
 }
-

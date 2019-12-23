@@ -141,20 +141,7 @@
      <string>Vagas disponíveis: </string>
     </property>
    </widget>
-   <widget class="QLabel" name="labelVagas">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>60</y>
-      <width>241</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -201,7 +188,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -214,41 +201,41 @@
      <item>
       <widget class="QPushButton" name="btnVaga1">
        <property name="text">
-        <string>Ocupar/Liberar</string>
+        <string>Alterar</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnVaga2">
        <property name="text">
-        <string>Ocupar/Liberar</string>
+        <string>Alterar</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnVaga3">
        <property name="text">
-        <string>Ocupar/Liberar</string>
+        <string>Alterar</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnVaga4">
        <property name="text">
-        <string>Ocupar/Liberar</string>
+        <string>Alterar</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnVaga5">
        <property name="text">
-        <string>Ocupar/Liberar</string>
+        <string>Alterar</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -262,6 +249,9 @@
       <widget class="QLabel" name="labelVaga1">
        <property name="text">
         <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -295,7 +285,89 @@
      </item>
     </layout>
    </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>55</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="labelVagas1">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelVagas2">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelVagas3">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelVagas4">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelVagas5">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/image/8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
+  <action name="actionatualizar">
+   <property name="text">
+    <string>atualizar</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

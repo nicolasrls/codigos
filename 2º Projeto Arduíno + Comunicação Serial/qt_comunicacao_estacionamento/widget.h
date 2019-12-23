@@ -16,11 +16,11 @@ class Widget : public QWidget
     Q_OBJECT
     QSerialPort serial;
     bool status_cancela = true;
-    bool vaga1_status;
-    bool vaga2_status;
-    bool vaga3_status;
-    bool vaga4_status;
-    bool vaga5_status;
+    bool vaga1_status = true;
+    bool vaga2_status = true;
+    bool vaga3_status = true;
+    bool vaga4_status = true;
+    bool vaga5_status = true;
 
 public:
     Widget(QWidget *parent = nullptr);
@@ -40,6 +40,8 @@ private slots:
     void on_btnVaga4_clicked();
 
     void on_btnVaga5_clicked();
+
+    void on_actionatualizar_triggered();
 
 private:
     Ui::Widget *ui;

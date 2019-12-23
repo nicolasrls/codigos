@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>8a5ce3a0-9afb-4523-b07d-63b2c766009d_200x200.png</file>
+        <file>c010f43b-cf09-4ed3-bdac-6243a3cf3ee4_200x200.png</file>
+    </qresource>
+</RCC>
