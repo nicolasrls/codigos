@@ -1,0 +1,6 @@
+-- Projeto com FPGA  - Cofre com combinação e 3 tentativas.
+-- Autores : Nícolas Ribeiro, Leandro Alencar e Danúbio Filho.
+-- Data: 21/01/2020
+-- Entradas: Clock, Reset e 4 Chaves
+-- Saídas: 3 Displays de 7 segmentos e um buzzer.
+
