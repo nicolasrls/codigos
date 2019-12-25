@@ -1,3 +1,5 @@
+#Remover numero repetido.
+
 numero = int(input("Número: "))
 freio = 0
 l = []

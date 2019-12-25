@@ -1,4 +1,4 @@
-# Questão do fatorial
+# Questão do número fatorial
 
 numero = int(input("Numero para fatorial: "))
 fat = 1

@@ -1,3 +1,5 @@
+#Questão de ordenar crescente
+
 a = int(input("Numero A: "))
 b = int(input("Numero B: "))
 c = int(input("Numero C: "))

@@ -1,4 +1,4 @@
-# Exercício do IMC
+# Exercício do IMC(Peso e altura)
 
 imcmn = 18.5
 imcma = 25

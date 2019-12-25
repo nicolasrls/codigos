@@ -1,3 +1,5 @@
+#Mostrar se o número é primo ou não
+
 def isprimo(numero):
     if numero != 0 & numero != 1:
         if numero > 3:

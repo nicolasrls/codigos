@@ -1,4 +1,4 @@
-#Questão de retorno de dias em meses
+#Questão de retorno de dias em mês desejado
 
 mes =int(input("Digite o mes em inteiro: "))
 

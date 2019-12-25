@@ -1,3 +1,5 @@
+#Verificar maior e menor da lista
+
 numero = int(input("Número: "))
 freio = 0
 maior = 1
