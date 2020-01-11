@@ -3,7 +3,6 @@
 -- Data: 21/01/2020
 -- Entradas: Clock, Reset e 4 Chaves
 -- Saídas: 3 Displays de 7 segmentos e um buzzer.
--- Descrição do projeto: Nosso projeto se baseia na ideia de desenvolver um cofre digital usando uma DE2 e FPGA, cofre esse que o usuário terá direito a uma senha de 4 dígitos e 3 tentativas de acerto. Caso exceda, o cofre ficará bloqueado por 20 segundos até que possa surgir mais 3 novas chances.
 
 library ieee;
 use ieee.std_logic_1164.all;

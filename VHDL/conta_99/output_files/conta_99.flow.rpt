@@ -1,5 +1,5 @@
 Flow report for conta_99
-Tue Dec 10 20:03:22 2019
+Sat Jan 11 16:21:53 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec 10 20:03:18 2019           ;
+; Flow Status                        ; Successful - Sat Jan 11 16:21:50 2020           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; conta_99                                        ;
 ; Top-level Entity Name              ; conta_99                                        ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/10/2019 20:03:02 ;
+; Start date & time ; 01/11/2020 16:21:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; conta_99            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 220812841891119.157601898211932 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 141761634573187.157877048406844 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
@@ -90,11 +90,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4661 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:09     ; 1.0                     ; 4926 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4585 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4579 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:14                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4626 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:16     ; 1.0                     ; 4791 MB             ; 00:00:14                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4557 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4536 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:23                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -103,10 +103,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DSK12LB07-JP     ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DSK12LB07-JP     ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DSK12LB07-JP     ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DSK12LB07-JP     ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; NicolasNotebook  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; NicolasNotebook  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; NicolasNotebook  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; NicolasNotebook  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

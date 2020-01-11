@@ -10,10 +10,8 @@ use IEEE.std_logic_unsigned.all;
  
 entity conta_99 is
 port (clk: in std_logic;
-      reset: in std_logic;
-      
-      sobedesce: in std_logic;
-     
+      reset: in std_logic;      
+      sobedesce: in std_logic;     
       HEX0, HEX1: out std_logic_vector (0 to 6));
 end conta_99;
  
@@ -50,6 +48,6 @@ contador1: conta_updown port map(carry_out, reset, sobedesce, open, bcd1);
  
 decod0: displaycvector port map(bcd0, HEX0);
                                  
-decod1: displaycvector port map(bcd1, HEX1);                                                                 --
+decod1: displaycvector port map(bcd1, HEX1);                                                               
    
 end arquitetura;
