@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QDateTime>
 #include <QSerialPort>
 #include <QSerialPortInfo>
 #include <QJsonDocument>

@@ -13,12 +13,14 @@ Widget::Widget(QWidget *parent)
             SIGNAL(readyRead()),
             this,
             SLOT(dadosRecebidos()));
+    ui->datahora->setText(QDateTime::currentDateTime().toString());
 }
 
 Widget::~Widget()
 {    
     delete ui;
 }
+
 
 
 void Widget::on_btnConectar_clicked()
@@ -36,6 +38,7 @@ void Widget::on_btnConectar_clicked()
 
 void Widget::dadosRecebidos()
 {
+    ui->datahora->setText(QDateTime::currentDateTime().toString());
     auto data = serial.readAll();
     auto json = QJsonDocument::fromJson(data).object().toVariantMap();
     if(json.contains("Vaga 1") ){
@@ -152,6 +155,7 @@ void Widget::on_btnVaga5_clicked()
 
 void Widget::on_actionatualizar_triggered()
 {
+    ui->datahora->setText(QDateTime::currentDateTime().toString());
     if(vaga1_status == false){
         ui->labelVaga1->setText("Ocupada");
     }else{

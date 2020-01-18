@@ -8,7 +8,7 @@ end flipflop;
 
 architecture behavioral of flipflop is
 begin 
-	process (clk)
+	process(clk)
 	begin
 		if clk'event and clk = '1' then
 		q <= d;

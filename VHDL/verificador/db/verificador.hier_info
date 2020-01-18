@@ -1,0 +1,11 @@
+|verificador
+ch1 => s1.DATAIN
+ch2 => s2.DATAIN
+ch3 => s3.DATAIN
+ch4 => s4.DATAIN
+s1 <= ch1.DB_MAX_OUTPUT_PORT_TYPE
+s2 <= ch2.DB_MAX_OUTPUT_PORT_TYPE
+s3 <= ch3.DB_MAX_OUTPUT_PORT_TYPE
+s4 <= ch4.DB_MAX_OUTPUT_PORT_TYPE
+
+

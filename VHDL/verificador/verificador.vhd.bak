@@ -1,0 +1,7 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity verificador is
+	port(ch1,ch2,ch3,ch4: is std_logic;
+			s1,s2,s3,s4: out std_logic );

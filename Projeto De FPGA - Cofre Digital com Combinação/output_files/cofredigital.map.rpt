@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cofredigital
-Mon Dec 23 11:57:53 2019
+Sat Jan 18 15:34:24 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Port Connectivity Checks: "clock:divisor"
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -41,16 +45,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 23 11:57:53 2019           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jan 18 15:34:24 2020           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; cofredigital                                    ;
 ; Top-level Entity Name              ; cofredigital                                    ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 28                                              ;
+; Total logic elements               ; 95                                              ;
+;     Total combinational functions  ; 95                                              ;
+;     Dedicated logic registers      ; 41                                              ;
+; Total registers                    ; 41                                              ;
+; Total pins                         ; 38                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -154,52 +158,92 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                            ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                     ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
-; cofredigital.vhd                 ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/codigos/Projeto De FPGA - Cofre Digital com Combinação/cofredigital.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
+; contador.vhd                     ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/codigos/Projeto De FPGA - Cofre Digital com Combinação/contador.vhd                     ;         ;
+; conta_decada.vhd                 ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/codigos/Projeto De FPGA - Cofre Digital com Combinação/conta_decada.vhd                 ;         ;
+; cofredigital.vhd                 ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/codigos/Projeto De FPGA - Cofre Digital com Combinação/cofredigital.vhd                 ;         ;
+; Clock/clock.vhd                  ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/codigos/Projeto De FPGA - Cofre Digital com Combinação/Clock/clock.vhd                  ;         ;
+; Vetor Display/displaycvector.vhd ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/codigos/Projeto De FPGA - Cofre Digital com Combinação/Vetor Display/displaycvector.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 28    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; ch1   ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 1     ;
-; Average fan-out                             ; 0.04  ;
-+---------------------------------------------+-------+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 95      ;
+;                                             ;         ;
+; Total combinational functions               ; 95      ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 42      ;
+;     -- 3 input functions                    ; 10      ;
+;     -- <=2 input functions                  ; 43      ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 64      ;
+;     -- arithmetic mode                      ; 31      ;
+;                                             ;         ;
+; Total registers                             ; 41      ;
+;     -- Dedicated logic registers            ; 41      ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 38      ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+; Maximum fan-out node                        ; clk_50M ;
+; Maximum fan-out                             ; 33      ;
+; Total fan-out                               ; 391     ;
+; Average fan-out                             ; 2.25    ;
++---------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |cofredigital              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |cofredigital       ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+; |cofredigital                  ; 95 (3)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |cofredigital                           ; work         ;
+;    |clock:divisor|             ; 59 (59)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cofredigital|clock:divisor             ; work         ;
+;    |conta_decada:contadec|     ; 11 (11)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cofredigital|conta_decada:contadec     ; work         ;
+;    |contador:conta3|           ; 5 (5)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cofredigital|contador:conta3           ; work         ;
+;    |displaycvector:decod0|     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cofredigital|displaycvector:decod0     ; work         ;
+;    |displaycvector:decod1|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cofredigital|displaycvector:decod1     ; work         ;
+;    |displaycvector:decodchave| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cofredigital|displaycvector:decodchave ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal       ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------+------------------------+
+; contador:conta3|q[0]                               ; comb                      ; yes                    ;
+; contador:conta3|q[1]                               ; comb                      ; yes                    ;
+; contador:conta3|q[2]                               ; comb                      ; yes                    ;
+; contador:conta3|q[3]                               ; comb                      ; yes                    ;
+; conta_decada:contadec|q[0]                         ; contador:conta3|carry_out ; yes                    ;
+; conta_decada:contadec|q[1]                         ; contador:conta3|carry_out ; yes                    ;
+; conta_decada:contadec|q[2]                         ; contador:conta3|carry_out ; yes                    ;
+; conta_decada:contadec|q[3]                         ; contador:conta3|carry_out ; yes                    ;
+; conta_decada:contadec|blok                         ; contador:conta3|carry_out ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                           ;                        ;
++----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; contador:conta3|qtemp[2,3]            ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -207,14 +251,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 41    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; clock:divisor|count[0]                 ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock:divisor"                                                                                           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; a    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; b    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -232,9 +296,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 23 11:57:50 2019
+    Info: Processing started: Sat Jan 18 15:34:20 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cofredigital -c cofredigital
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
+    Info (12022): Found design unit 1: contador-arquitetura
+    Info (12023): Found entity 1: contador
+Info (12021): Found 2 design units, including 1 entities, in source file conta_decada.vhd
+    Info (12022): Found design unit 1: conta_decada-arquitetura
+    Info (12023): Found entity 1: conta_decada
 Info (12021): Found 2 design units, including 1 entities, in source file cofredigital.vhd
     Info (12022): Found design unit 1: cofredigital-arquiteturacofre
     Info (12023): Found entity 1: cofredigital
@@ -244,47 +314,56 @@ Info (12021): Found 2 design units, including 1 entities, in source file clock/c
 Info (12021): Found 2 design units, including 1 entities, in source file vetor display/displaycvector.vhd
     Info (12022): Found design unit 1: displaycvector-arquitetura
     Info (12023): Found entity 1: displaycvector
+Info (12021): Found 2 design units, including 1 entities, in source file pwm.vhd
+    Info (12022): Found design unit 1: PWM-RTL
+    Info (12023): Found entity 1: PWM
 Info (12127): Elaborating entity "cofredigital" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at cofredigital.vhd(14): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at cofredigital.vhd(14): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at cofredigital.vhd(14): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at cofredigital.vhd(18): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at cofredigital.vhd(19): used implicit default value for signal "buz1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at cofredigital.vhd(20): used implicit default value for signal "pwm_pin" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at cofredigital.vhd(76): signal "ch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "clock" for hierarchy "clock:divisor"
+Warning (10541): VHDL Signal Declaration warning at clock.vhd(10): used implicit default value for signal "a" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at clock.vhd(10): used implicit default value for signal "b" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "contador" for hierarchy "contador:conta3"
+Warning (10631): VHDL Process Statement warning at contador.vhd(21): inferring latch(es) for signal or variable "q", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "q[0]" at contador.vhd(21)
+Info (10041): Inferred latch for "q[1]" at contador.vhd(21)
+Info (10041): Inferred latch for "q[2]" at contador.vhd(21)
+Info (10041): Inferred latch for "q[3]" at contador.vhd(21)
+Info (12128): Elaborating entity "conta_decada" for hierarchy "conta_decada:contadec"
+Warning (10631): VHDL Process Statement warning at conta_decada.vhd(19): inferring latch(es) for signal or variable "q", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at conta_decada.vhd(19): inferring latch(es) for signal or variable "blok", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "blok" at conta_decada.vhd(19)
+Info (10041): Inferred latch for "q[0]" at conta_decada.vhd(19)
+Info (10041): Inferred latch for "q[1]" at conta_decada.vhd(19)
+Info (10041): Inferred latch for "q[2]" at conta_decada.vhd(19)
+Info (10041): Inferred latch for "q[3]" at conta_decada.vhd(19)
+Info (12128): Elaborating entity "displaycvector" for hierarchy "displaycvector:decod0"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND
-    Warning (13410): Pin "HEX0[5]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
-    Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
-    Warning (13410): Pin "HEX1[6]" is stuck at GND
-    Warning (13410): Pin "HEX1[5]" is stuck at GND
-    Warning (13410): Pin "HEX1[4]" is stuck at GND
-    Warning (13410): Pin "HEX1[3]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
     Warning (13410): Pin "HEX1[1]" is stuck at GND
-    Warning (13410): Pin "HEX1[0]" is stuck at GND
-    Warning (13410): Pin "HEX2[6]" is stuck at GND
-    Warning (13410): Pin "HEX2[5]" is stuck at GND
-    Warning (13410): Pin "HEX2[4]" is stuck at GND
-    Warning (13410): Pin "HEX2[3]" is stuck at GND
-    Warning (13410): Pin "HEX2[2]" is stuck at GND
-    Warning (13410): Pin "HEX2[1]" is stuck at GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at GND
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+    Warning (13410): Pin "buz1" is stuck at GND
+    Warning (13410): Pin "pwm_pin" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "ch2"
-    Warning (15610): No output dependent on input pin "ch3"
-    Warning (15610): No output dependent on input pin "ch4"
-    Warning (15610): No output dependent on input pin "clk"
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rst"
-Info (21057): Implemented 28 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 22 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 4632 megabytes
-    Info: Processing ended: Mon Dec 23 11:57:53 2019
-    Info: Elapsed time: 00:00:03
+Info (21057): Implemented 152 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 31 output pins
+    Info (21061): Implemented 114 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4626 megabytes
+    Info: Processing ended: Sat Jan 18 15:34:24 2020
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 

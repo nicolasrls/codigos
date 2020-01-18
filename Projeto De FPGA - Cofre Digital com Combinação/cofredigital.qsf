@@ -52,13 +52,7 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_location_assignment PIN_N25 -to ch1
-set_location_assignment PIN_AE23 -to buzzer
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
-set_location_assignment PIN_N26 -to ch2
-set_location_assignment PIN_P25 -to ch3
-set_location_assignment PIN_AE14 -to ch4
-set_location_assignment PIN_N2 -to clk
 set_location_assignment PIN_V2 -to rst
 set_location_assignment PIN_AF10 -to HEX0[0]
 set_location_assignment PIN_AB12 -to HEX0[1]
@@ -67,21 +61,43 @@ set_location_assignment PIN_AD11 -to HEX0[3]
 set_location_assignment PIN_AE11 -to HEX0[4]
 set_location_assignment PIN_V14 -to HEX0[5]
 set_location_assignment PIN_V13 -to HEX0[6]
-set_location_assignment PIN_V20 -to HEX1[0]
-set_location_assignment PIN_V21 -to HEX1[1]
-set_location_assignment PIN_W21 -to HEX1[2]
-set_location_assignment PIN_Y22 -to HEX1[3]
-set_location_assignment PIN_AA24 -to HEX1[4]
-set_location_assignment PIN_AA23 -to HEX1[5]
-set_location_assignment PIN_AB24 -to HEX1[6]
-set_location_assignment PIN_U9 -to HEX2[0]
-set_location_assignment PIN_U1 -to HEX2[1]
-set_location_assignment PIN_U2 -to HEX2[2]
-set_location_assignment PIN_T4 -to HEX2[3]
-set_location_assignment PIN_R7 -to HEX2[4]
-set_location_assignment PIN_R6 -to HEX2[5]
-set_location_assignment PIN_T3 -to HEX2[6]
+set_location_assignment PIN_U9 -to HEX1[0]
+set_location_assignment PIN_U1 -to HEX1[1]
+set_location_assignment PIN_U2 -to HEX1[2]
+set_location_assignment PIN_T4 -to HEX1[3]
+set_location_assignment PIN_R7 -to HEX1[4]
+set_location_assignment PIN_R6 -to HEX1[5]
+set_location_assignment PIN_T3 -to HEX1[6]
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_AE23 -to buz
+set_location_assignment PIN_AF23 -to buz1
+set_location_assignment PIN_AE14 -to ch[3]
+set_location_assignment PIN_P25 -to ch[2]
+set_location_assignment PIN_N26 -to ch[1]
+set_location_assignment PIN_N25 -to ch[0]
+set_location_assignment PIN_G26 -to enter
+set_location_assignment PIN_R2 -to HEX2[0]
+set_location_assignment PIN_P4 -to HEX2[1]
+set_location_assignment PIN_P3 -to HEX2[2]
+set_location_assignment PIN_M2 -to HEX2[3]
+set_location_assignment PIN_M3 -to HEX2[4]
+set_location_assignment PIN_M5 -to HEX2[5]
+set_location_assignment PIN_M4 -to HEX2[6]
+set_location_assignment PIN_V20 -to HEX3[0]
+set_location_assignment PIN_V21 -to HEX3[1]
+set_location_assignment PIN_W21 -to HEX3[2]
+set_location_assignment PIN_Y22 -to HEX3[3]
+set_location_assignment PIN_AA24 -to HEX3[4]
+set_location_assignment PIN_AA23 -to HEX3[5]
+set_location_assignment PIN_AB24 -to HEX3[6]
+set_location_assignment PIN_N2 -to clk_50M
+set_location_assignment PIN_D25 -to pwm_pin
+set_location_assignment PIN_AF14 -to ch[4]
+set_global_assignment -name VHDL_FILE contador.vhd
+set_global_assignment -name VHDL_FILE conta_decada.vhd
 set_global_assignment -name VHDL_FILE cofredigital.vhd
 set_global_assignment -name VHDL_FILE Clock/clock.vhd
 set_global_assignment -name VHDL_FILE "Vetor Display/displaycvector.vhd"
+set_global_assignment -name VHDL_FILE PWM.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
