@@ -14,7 +14,6 @@
 #define vg4vd 8
 #define vg5vm 5
 #define vg5vd 4
-
 #define vd 2 //Pino digital do led vermelho **cancela**
 #define vm 3 //Pino digital do led verde **cancela**
 #define srv 6 //Pino do servo
@@ -89,7 +88,7 @@ void leituraRfid() {
         s.usarCancela();
         cancela.apaga();
         cancela.acende2();
-        doc["Vaga 1"] == vaga1.getEstadoVaga();
+        doc["Vaga 1"] = vaga1.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else if (strID.indexOf(SR_LEANDRO) >= 0) {
@@ -100,7 +99,7 @@ void leituraRfid() {
         s.usarCancela();
         cancela.apaga();
         cancela.acende2();
-        doc["Vaga 2"] == vaga2.getEstadoVaga();
+        doc["Vaga 2"] = vaga2.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else if (strID.indexOf(SR_EDGAR) >= 0) {
@@ -111,7 +110,7 @@ void leituraRfid() {
         s.usarCancela();
         cancela.apaga();
         cancela.acende2();
-        doc["Vaga 3"] == vaga3.getEstadoVaga();
+        doc["Vaga 3"] = vaga3.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else if (strID.indexOf(SR_LACOUTH) >= 0) {
@@ -122,7 +121,7 @@ void leituraRfid() {
         s.usarCancela();
         cancela.apaga();
         cancela.acende2();
-        doc["Vaga 4"] == vaga4.getEstadoVaga();
+        doc["Vaga 4"] = vaga4.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else if (strID.indexOf(SR_LIMA) >= 0) {
@@ -132,7 +131,7 @@ void leituraRfid() {
         s.usarCancela();
         cancela.apaga();
         cancela.acende2();
-        doc["Vaga 5"] == vaga5.getEstadoVaga();
+        doc["Vaga 5"] = vaga5.getEstadoVaga();
         serializeJson(doc,Serial);
     }
     else { //SENÃO, FAZ (CASO A TAG LIDA NÃO SEJÁ VÁLIDA)
@@ -159,53 +158,33 @@ void leituraSerial(){
           cancela.apaga();
           cancela.acende2();
        }else if( doc["Vaga 1"] == 0){
-           vaga1.mudaEstado(vg1);
-           doc["Vaga 1"] == vaga1.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga1.mudaEstado(vg1);           
        }else if(doc["Vaga 1"] == 1){
-           vaga1.mudaEstado(vg1);
-           doc["Vaga 1"] == vaga1.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga1.mudaEstado(vg1);       
        }else if( doc["Vaga 2"] == 0){
-           vaga2.mudaEstado(vg2);
-           doc["Vaga 2"] == vaga2.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga2.mudaEstado(vg2);           
        }else if(doc["Vaga 2"] == 1){
-           vaga2.mudaEstado(vg2);
-           doc["Vaga 2"] == vaga2.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga2.mudaEstado(vg2);           
        }else if( doc["Vaga 3"] == 0){
-           vaga3.mudaEstado(vg3);
-           doc["Vaga 3"] == vaga3.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga3.mudaEstado(vg3);           
        }else if(doc["Vaga 3"] == 1){
-           vaga3.mudaEstado(vg3);
-           doc["Vaga 3"] == vaga3.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga3.mudaEstado(vg3);           
        }else if( doc["Vaga 4"] == 0){
-           vaga4.mudaEstado(vg4);
-           doc["Vaga 4"] == vaga4.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga4.mudaEstado(vg4);           
        }else if(doc["Vaga 4"] == 1){
-           vaga4.mudaEstado(vg4);
-           doc["Vaga 4"] == vaga4.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga4.mudaEstado(vg4);           
        }else if( doc["Vaga 5"] == 0){
-           vaga5.mudaEstado(vg5);
-           doc["Vaga 5"] == vaga5.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga5.mudaEstado(vg5);           
        }else if(doc["Vaga 5"] == 1){
-           vaga5.mudaEstado(vg5);
-           doc["Vaga 5"] == vaga5.getEstadoVaga();
-           serializeJson(doc,Serial);
+           vaga5.mudaEstado(vg5);           
        }
      }
 }
 
 void envioSerial(){
-    doc["Vaga 1"] == vaga1.getEstadoVaga();
-    doc["Vaga 2"] == vaga2.getEstadoVaga();
-    doc["Vaga 3"] == vaga3.getEstadoVaga();
-    doc["Vaga 4"] == vaga4.getEstadoVaga();
-    doc["Vaga 5"] == vaga5.getEstadoVaga();
+    doc["Vaga 1"] = vaga1.getEstadoVaga();
+    doc["Vaga 2"] = vaga2.getEstadoVaga();
+    doc["Vaga 3"] = vaga3.getEstadoVaga();
+    doc["Vaga 4"] = vaga4.getEstadoVaga();
+    doc["Vaga 5"] = vaga5.getEstadoVaga();
 }

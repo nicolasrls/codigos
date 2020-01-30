@@ -31,19 +31,12 @@ private slots:
     void on_btnConectar_clicked();
     void dadosRecebidos();
     void on_btnLiberaCancela_clicked();
-
     void on_btnVaga1_clicked();
-
     void on_btnVaga2_clicked();
-
     void on_btnVaga3_clicked();
-
     void on_btnVaga4_clicked();
-
     void on_btnVaga5_clicked();
-
     void on_actionatualizar_triggered();
-
 private:
     Ui::Widget *ui;
 };

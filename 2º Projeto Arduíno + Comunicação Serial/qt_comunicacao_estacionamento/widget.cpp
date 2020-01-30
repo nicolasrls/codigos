@@ -1,10 +1,11 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include <QDebug>
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
-{    
+{
     ui->setupUi(this);
     for(auto p : QSerialPortInfo::availablePorts()){
         ui->comboBoxport->addItem(p.portName());
@@ -17,11 +18,10 @@ Widget::Widget(QWidget *parent)
 }
 
 Widget::~Widget()
-{    
+{
+    serial.close();
     delete ui;
 }
-
-
 
 void Widget::on_btnConectar_clicked()
 {
@@ -40,11 +40,12 @@ void Widget::dadosRecebidos()
 {
     ui->datahora->setText(QDateTime::currentDateTime().toString());
     auto data = serial.readAll();
+    qDebug() << data;
     auto json = QJsonDocument::fromJson(data).object().toVariantMap();
     if(json.contains("Vaga 1") ){
-        vaga1_status = json["Vaga 1"].toBool();        
+        vaga1_status = json["Vaga 1"].toBool();
         QString btn_text = vaga1_status ? "Ocupar Vaga" : "Liberar Vaga";
-        ui->btnVaga1->setText(btn_text);
+        ui->btnVaga1->setText(btn_text);        
         on_actionatualizar_triggered();
     }else if(json.contains("Vaga 2") ){
         vaga2_status = json["Vaga 2"].toBool();
@@ -110,6 +111,7 @@ void Widget::on_btnVaga1_clicked()
     }else{
         serial.write("{\"Vaga 1\": 1}");
     }
+
     on_actionatualizar_triggered();
 }
 

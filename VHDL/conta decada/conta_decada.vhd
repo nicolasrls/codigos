@@ -22,7 +22,7 @@ begin
         qtemp:="0000";                                                   
         else      
             if clk'event and clk='1' then                            
-                if qtemp<3 then
+                if qtemp<9 then
                 qtemp:=qtemp+1;                                        
                 else
                 qtemp:="0000";                                            
