@@ -1,0 +1,44 @@
+
+.block{
+  position: relative;
+  text-align: center;
+  background: #1a1a1a;
+  width: 100%;
+  height: 100%;
+}
+ 
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+  margin-right: -0.25em;
+ }
+ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+  background: #222;
+  color: #FFF
+}
+.name {
+    flex-wrap: nowrap;
+}
+
+.name img {
+    border-radius: 60%;
+    width: 300px;
+    height: 300px;
+    object-fit: fill;
+}
+
+.contato {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: middle;
+    text-align: left;
+    width: 80%;
+    background: #222;
+    color: #FFF
+}
