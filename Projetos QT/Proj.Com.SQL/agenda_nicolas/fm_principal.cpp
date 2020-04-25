@@ -18,3 +18,8 @@ void fm_principal::on_btn_adicionar_clicked()
     fm_novocontato f_novocontato;
     f_novocontato.exec();
 }
+
+void fm_principal::on_btn_pesquisar_clicked()
+{
+
+}

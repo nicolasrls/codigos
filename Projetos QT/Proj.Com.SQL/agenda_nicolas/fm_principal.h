@@ -19,6 +19,8 @@ public:
 private slots:
     void on_btn_adicionar_clicked();
 
+    void on_btn_pesquisar_clicked();
+
 private:
     Ui::fm_principal *ui;
 };

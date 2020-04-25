@@ -2,6 +2,8 @@
 #define FM_NOVOCONTATO_H
 
 #include <QDialog>
+#include <QtSql>
+#include <QMessageBox>
 
 namespace Ui {
 class fm_novocontato;
@@ -16,7 +18,9 @@ public:
     ~fm_novocontato();
 
 private slots:
-    void on_btn_novocontato_clicked();
+    void on_btn_gravar_clicked();
+
+    void on_btn_cancelar_clicked();
 
 private:
     Ui::fm_novocontato *ui;
